@@ -1,5 +1,4 @@
-﻿using IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler;
-using IEA_ErpProject101_Main.Entity;
+﻿using IEA_ErpProject101_Main.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,27 +9,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IEA_ErpProject101_Main.BilgiGirisIslemleri
+namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
 {
-    public partial class frmHastanelerListesi : Form
+    public partial class frmDoktorlarListesi : Form
     {
         private ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
         private int secimId = -1;
-        public frmHastanelerListesi()
+        public frmDoktorlarListesi()
         {
             InitializeComponent();
         }
 
-        private void frmHastanelerListesi_Load(object sender, EventArgs e)
+        private void frmDoktorlarListesi_Load(object sender, EventArgs e)
         {
             Listele();
         }
-
         private void Listele()
         {
             liste.Rows.Clear();
             int i = 0, sira = 1;
-            var lst = (from s in erp.tblCariler where s.isActive == true && s.CariGroupId==1 select s).ToList();
+            var lst = (from s in erp.tblCariler where s.isActive == true && s.CariGroupId==2 select s).ToList();
             foreach (tblCariler k in lst)
             {
                 liste.Rows.Add();
@@ -49,29 +47,23 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri
             liste.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-        private void frmHastanelerListesi_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Home.kontrol = false;
-            //this.Dispose();
-        }
-
         private void liste_DoubleClick(object sender, EventArgs e)
         {
             secimId = (int?)liste.CurrentRow.Cells[0].Value ?? -1;
-            if (secimId > 0 && Application.OpenForms["frmHastaneGiris"]==null)
+            if (secimId > 0 && Application.OpenForms["frmHastaneGiris"] == null)
             {
-                frmHastaneGiris frm = new frmHastaneGiris();
+                frmDoktorGiris frm = new frmDoktorGiris();
                 frm.MdiParent = Home.ActiveForm;
                 frm.Show();
+                frm.Ac(secimId);
                 Close();
             }
             else if (Application.OpenForms["frmHastaneGiris"] != null)
             {
-                frmHastaneGiris frm1 =Application.OpenForms["frmHastaneGiris"] as frmHastaneGiris;
+                frmDoktorGiris frm1 = Application.OpenForms["frmHastaneGiris"] as frmDoktorGiris;
                 frm1.Ac(secimId);
                 Close();
             }
-
         }
     }
 }

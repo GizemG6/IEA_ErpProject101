@@ -1,4 +1,5 @@
 ﻿using IEA_ErpProject101_Main.BilgiGirisIslemleri;
+using IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar;
 using IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler;
 using System;
 using System.Collections.Generic;
@@ -86,21 +87,40 @@ namespace IEA_ErpProject101_Main
         public static bool kontrol = false;
         private void tvBilgiGirisIslemleri_DoubleClick(object sender, EventArgs e)
         {
-            string isim = tvBilgiGirisIslemleri.SelectedNode.Text;
-           // MessageBox.Show(isim);
-            if (isim=="Hastaneler Listesi" && Application.OpenForms["frmHastanelerListesi"] as frmHastanelerListesi is null)
+            //string isim = "";
+            //if (tvBilgiGirisIslemleri.SelectedNode != null)
+            //{
+            //    isim = tvBilgiGirisIslemleri.SelectedNode.Text;
+            //}
+            string isim = tvBilgiGirisIslemleri.SelectedNode != null ? tvBilgiGirisIslemleri.SelectedNode.Text : "";
+
+            if (isim=="Hastaneler Listesi" && Application.OpenForms["frmHastanelerListesi"] is null)
             {
                 frmHastanelerListesi frm = new frmHastanelerListesi();
                 frm.MdiParent = Form.ActiveForm;
                 frm.Show();
+                frm.Activate();
                 //kontrol = true;
-            }else if (isim=="Hastane Bilgi Giriş" && Application.OpenForms["frmHastaneGiris"] as frmHastaneGiris is null)
+            }
+            else if (isim=="Hastane Bilgi Giriş" && Application.OpenForms["frmHastaneGiris"] is null)
             {
                 frmHastaneGiris frm = new frmHastaneGiris();
                 frm.MdiParent = Form.ActiveForm;
                 frm.Show();
                 //kontrol = false;
 
+            }
+            else if(isim=="Doktorlar Bilgi Giriş" && Application.OpenForms["frmHastaneGiris"] is null)
+            {
+                frmDoktorGiris frm = new frmDoktorGiris();
+                frm.MdiParent = Form.ActiveForm;
+                frm.Show();
+            }
+            else if(isim=="Doktorlar Listesi" && Application.OpenForms["frmHastaneGiris"] is null)
+            {
+                frmDoktorlarListesi frm = new frmDoktorlarListesi();
+                frm.MdiParent = Form.ActiveForm;
+                frm.Show();
             }
         }
     }

@@ -1,11 +1,13 @@
 ﻿using IEA_ErpProject101_Main.Entity;
 using IEA_ErpProject101_Main.Fonksiyonlar;
+using IEA_ErpProject101_Main.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,37 +35,39 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
         }
         private void Listele()
         {
-            liste.Rows.Clear();
-            int i = 0, sira = 1;
-            var lst = (from s in erp.tblCariler
-                       where s.isActive == true
-                       select new
-                       {
-                           id = s.Id,
-                           hcode = s.CariNo,
-                           hadi = s.CariAdi,
-                           htel = s.CariTel,
-                           hmail = s.CariMail,
-                           hyet = s.YetkiliAdi1,
+                liste.Rows.Clear();
+                int i = 0, sira = 1;
+                var lst = (from s in erp.tblCariler
+                           where s.isActive == true
+                           where s.CariGroupId==1
+                           select new
+                           {
+                               id = s.Id,
+                               hcode = s.CariNo,
+                               hadi = s.CariAdi,
+                               htel = s.CariTel,
+                               hmail = s.CariMail,
+                               hyet = s.YetkiliAdi1,
 
-                       }).ToList();
+                           }).ToList();
 
-            foreach (var k in lst)
-            {
-                liste.Rows.Add();
-                liste.Rows[i].Cells[0].Value = k.id;
-                liste.Rows[i].Cells[1].Value = sira;
-                liste.Rows[i].Cells[2].Value = k.hcode;
-                liste.Rows[i].Cells[3].Value = k.hadi;
-                liste.Rows[i].Cells[4].Value = k.htel;
-                liste.Rows[i].Cells[5].Value = k.hmail;
-                liste.Rows[i].Cells[6].Value = k.hyet;
-                i++;
-                sira++;
+                foreach (var k in lst)
+                {
+                    liste.Rows.Add();
+                    liste.Rows[i].Cells[0].Value = k.id;
+                    liste.Rows[i].Cells[1].Value = sira;
+                    liste.Rows[i].Cells[2].Value = k.hcode;
+                    liste.Rows[i].Cells[3].Value = k.hadi;
+                    liste.Rows[i].Cells[4].Value = k.htel;
+                    liste.Rows[i].Cells[5].Value = k.hmail;
+                    liste.Rows[i].Cells[6].Value = k.hyet;
+                    i++;
+                    sira++;
+                }
+                liste.AllowUserToAddRows = false;
+                lblHastaneKodu.Text = n.CariKoduHastane(); 
             }
-            liste.AllowUserToAddRows = false;
-            lblHastaneKodu.Text = n.CariKoduHastane();
-        }
+        
         private void ComboDoldur()
         {
             var lst = erp.tblDepartmanlar.Where(x => x.GrupId == 1).ToList();
@@ -114,7 +118,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             string hkodu = n.CariKoduHastane();
             try
             {
-                if (secimId==1)
+                if (secimId==-1)
                 {
                     tblCariler hst = new tblCariler();
                     hst.isActive = true;
@@ -261,11 +265,12 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             Ac(secimId);
         }
 
-        private void Ac(int secimId)
+        public void Ac(int id)
         {
+            secimId = id;//dis formdan veri gelirse secimid hatası almamak icin
             try
             {
-                tblCariler hst = erp.tblCariler.Find(secimId);
+                tblCariler hst = erp.tblCariler.Find(id);
                 txtHastaneAdi.Text = hst.CariAdi;
                 txtHastaneMail.Text = hst.CariMail;
                 txtHastaneTel.Text = hst.CariTel;
@@ -291,12 +296,36 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
                 txtVerTcNo.Text = hst.Tc_Vn;
                 txtSehir.Text = hst.tblSehirler.sehir;
                 lblHastaneKodu.Text = hst.CariNo;
+                txtKayitBul.Text = hst.CariNo;
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
         }
-
+        protected override void OnLoad(EventArgs e)
+        {
+           
+            var btn = new Button();
+            btn.Size = new Size(25, txtKayitBul.ClientSize.Height + 2);
+            btn.Location = new Point(txtKayitBul.ClientSize.Width - btn.Width - 1);
+            btn.Cursor = Cursors.Default;
+            btn.Image = Resources.arrow_1176;
+            txtKayitBul.Controls.Add(btn);
+            base.OnLoad(e);
+            btn.Click += btn_Click;
+        }
+        [DllImport("user32.dll")]
+        private static extern IntPtr SendMessage(IntPtr hWknd, int msg, IntPtr wp, IntPtr lp);
+        private void btn_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmHastenelerListesi"]==null)
+            {
+                frmHastanelerListesi frm = new frmHastanelerListesi();
+                frm.MdiParent = Home.ActiveForm;
+                frm.Show(); 
+            }
+            SendToBack();
+        }
     }
 }

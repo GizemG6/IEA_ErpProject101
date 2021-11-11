@@ -73,6 +73,16 @@ namespace IEA_ErpProject101_Main.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_1176 {
+            get {
+                object obj = ResourceManager.GetObject("arrow-1176", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exit_48 {
             get {
                 object obj = ResourceManager.GetObject("exit-48", resourceCulture);
