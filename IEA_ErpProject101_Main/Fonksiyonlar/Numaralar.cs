@@ -28,9 +28,37 @@ namespace IEA_ErpProject101_Main.Fonksiyonlar
         {
             try
             {
-                var numara = (from s in erp.tblCariler orderby s.Id descending select s).First().Id;
+                var numara = (from s in erp.tblCariler where s.CariGroupId == 2 orderby s.Id descending select s).First().Id;
                 numara++;
                 string num = "D" + numara.ToString().PadLeft(8, '0');
+                return num;
+            }
+            catch (Exception)
+            {
+                return "00000001";
+            }
+        }
+        public string CariKoduPersonel()
+        {
+            try
+            {
+                var numara = (from s in erp.tblCariler where s.CariGroupId==6 orderby s.Id descending select s).First().Id;
+                numara++;
+                string num = "P" + numara.ToString().PadLeft(8, '0');
+                return num;
+            }
+            catch (Exception)
+            {
+                return "00000001";
+            }
+        }
+        public string CariKoduFirma()
+        {
+            try
+            {
+                var numara = (from s in erp.tblCariler where s.CariGroupId == 3 orderby s.Id descending select s).First().Id;
+                numara++;
+                string num = "F" + numara.ToString().PadLeft(8, '0');
                 return num;
             }
             catch (Exception)

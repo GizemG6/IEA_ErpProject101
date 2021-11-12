@@ -9,18 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
+namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
 {
-    public partial class frmDoktorlarListesi : Form
+    public partial class frmFirmalarListesi : Form
     {
         private ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
         private int secimId = -1;
-        public frmDoktorlarListesi()
+        public frmFirmalarListesi()
         {
             InitializeComponent();
         }
 
-        private void frmDoktorlarListesi_Load(object sender, EventArgs e)
+        private void frmFirmalarListesi_Load(object sender, EventArgs e)
         {
             Listele();
         }
@@ -28,7 +28,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
         {
             liste.Rows.Clear();
             int i = 0, sira = 1;
-            var lst = (from s in erp.tblCariler where s.isActive == true && s.CariGroupId==2 select s).ToList();
+            var lst = (from s in erp.tblCariler where s.isActive == true && s.CariGroupId == 3 select s).ToList();
             foreach (tblCariler k in lst)
             {
                 liste.Rows.Add();
@@ -50,17 +50,16 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
         private void liste_DoubleClick(object sender, EventArgs e)
         {
             secimId = (int?)liste.CurrentRow.Cells[0].Value ?? -1;
-            if (secimId > 0 && Application.OpenForms["frmDoktorGiris"] == null)
+            if (secimId > 0 && Application.OpenForms["frmFirmaGiris"] == null)
             {
-                frmDoktorGiris frm = new frmDoktorGiris();
+                frmFirmaGiris frm = new frmFirmaGiris();
                 frm.MdiParent = Home.ActiveForm;
                 frm.Show();
-                frm.Ac(secimId);
                 Close();
             }
-            else if (Application.OpenForms["frmDoktorGiris"] != null)
+            else if (Application.OpenForms["frmFirmaGiris"] != null)
             {
-                frmDoktorGiris frm1 = Application.OpenForms["frmDoktorGiris"] as frmDoktorGiris;
+                frmFirmaGiris frm1 = Application.OpenForms["frmFirmaGiris"] as frmFirmaGiris;
                 frm1.Ac(secimId);
                 Close();
             }

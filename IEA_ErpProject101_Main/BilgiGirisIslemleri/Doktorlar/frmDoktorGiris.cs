@@ -113,7 +113,11 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
                     dr.CariUnvan = txtDUnvan.Text;
                     dr.Vdairesi = txtVergiDairesi.Text;
                     dr.Tc_Vn = txtVerTcNo.Text;
-                    dr.SehirId = (int?)txtSehir.SelectedValue ?? -1;//txtSehir.SelectedValue!=null ? (int)txtSehir.SelectedValue:-1 ;//erp.tblSehirler.First(x => x.sehir == txtSehir.Text).id;
+                    if (txtSehir.Text != "")
+                    {
+                        dr.SehirId = (int?)txtSehir.SelectedValue ?? -1;
+                    }
+                    //dr.SehirId = (int?)txtSehir.SelectedValue ?? -1;//txtSehir.SelectedValue!=null ? (int)txtSehir.SelectedValue:-1 ;//erp.tblSehirler.First(x => x.sehir == txtSehir.Text).id;
                     dr.SaveUserId = 1;
                     dr.SaveDate = DateTime.Now;
                     dr.CariNo = dkodu;
@@ -172,7 +176,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
                 
                 txtVergiDairesi.Text = hst.Vdairesi;
                 txtVerTcNo.Text = hst.Tc_Vn;
-                txtSehir.Text = hst.tblSehirler.sehir;
+                txtSehir.Text = hst.tblSehirler == null ? "" : hst.tblSehirler.sehir;
+                
                 lblDoktorKodu.Text = hst.CariNo;
                 txtKayitBul.Text = hst.CariNo;
             }

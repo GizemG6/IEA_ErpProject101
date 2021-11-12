@@ -29,5 +29,6 @@ namespace IEA_ErpProject101_Main.Entity
         public virtual DbSet<tblCariGruplari> tblCariGruplari { get; set; }
         public virtual DbSet<tblDepartmanlar> tblDepartmanlar { get; set; }
         public virtual DbSet<tblSehirler> tblSehirler { get; set; }
+        public virtual DbSet<tblPersonelDetay> tblPersonelDetay { get; set; }
     }
 }
