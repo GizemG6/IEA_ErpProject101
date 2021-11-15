@@ -115,10 +115,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             string fkodu = n.CariKoduFirma();
             try
             {
-                if(txtFAdi.Text != "")
-                {
-                    return;
-                }
+                
                 if (secimId ==-1)
                 {
                     tblCariler f = new tblCariler();
@@ -145,6 +142,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
                     f.Adres2 = txtAdres2.Text;
                     f.CariGroupId = 3;
                     f.CariTipId = txtFTipi.SelectedIndex+1;
+                    f.CariUnvan = txtFTipi.Text;
                     f.Vdairesi = txtVergiDairesi.Text;
                     f.Tc_Vn = txtVerTcNo.Text;
                     if (txtSehir.Text != "")
@@ -220,6 +218,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
                 {
                     f.CariTipId = (int)txtFTipi.SelectedValue;
                 }
+                f.CariUnvan = txtFTipi.Text;
                 f.Vdairesi = txtVergiDairesi.Text;
                 f.Tc_Vn = txtVerTcNo.Text;
                 f.SehirId = (int?)txtSehir.SelectedValue ?? -1;//txtSehir.SelectedValue!=null ? (int)txtSehir.SelectedValue:-1 ;//erp.tblSehirler.First(x => x.sehir == txtSehir.Text).id;
