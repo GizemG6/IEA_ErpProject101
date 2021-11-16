@@ -16,6 +16,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri
     {
         private ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
         private int secimId = -1;
+        internal bool Secim=false;
+
         public frmHastanelerListesi()
         {
             InitializeComponent();
@@ -30,7 +32,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri
         {
             liste.Rows.Clear();
             int i = 0, sira = 1;
-            var lst = (from s in erp.tblCariler where s.isActive == true && s.CariGroupId==1 select s).ToList();
+            var lst = (from s in erp.tblCariler where s.isActive == true where s.CariGroupId == 1 && s.CariGroupId==1 select s).ToList();
             foreach (tblCariler k in lst)
             {
                 liste.Rows.Add();
@@ -58,11 +60,12 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri
         private void liste_DoubleClick(object sender, EventArgs e)
         {
             secimId = (int?)liste.CurrentRow.Cells[0].Value ?? -1;
-            if (secimId > 0 && Application.OpenForms["frmHastaneGiris"]==null)
+            if (secimId > 0 && Secim && Application.OpenForms["frmHastaneGiris"]==null)
             {
-                frmHastaneGiris frm = new frmHastaneGiris();
-                frm.MdiParent = Home.ActiveForm;
-                frm.Show();
+                Home.Aktarma = secimId;
+                //frmHastaneGiris frm = new frmHastaneGiris();
+                //frm.MdiParent = Home.ActiveForm;
+                //frm.Show();
                 Close();
             }
             else if (Application.OpenForms["frmHastaneGiris"] != null)

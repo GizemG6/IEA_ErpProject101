@@ -141,7 +141,6 @@ namespace IEA_ErpProject101_Main
             // 
             // spcSolMenuOrta.Panel1
             // 
-            this.spcSolMenuOrta.Panel1.Controls.Add(this.tvUrunIslemleri);
             this.spcSolMenuOrta.Panel1.Controls.Add(this.tvDepoIslemleri);
             this.spcSolMenuOrta.Panel1.Controls.Add(this.tvBilgiGirisIslemleri);
             this.spcSolMenuOrta.Panel1.Controls.Add(this.tv12);
@@ -153,6 +152,7 @@ namespace IEA_ErpProject101_Main
             this.spcSolMenuOrta.Panel1.Controls.Add(this.tv6);
             this.spcSolMenuOrta.Panel1.Controls.Add(this.tv5);
             this.spcSolMenuOrta.Panel1.Controls.Add(this.tv4);
+            this.spcSolMenuOrta.Panel1.Controls.Add(this.tvUrunIslemleri);
             // 
             // spcSolMenuOrta.Panel2
             // 
@@ -184,6 +184,7 @@ namespace IEA_ErpProject101_Main
             this.tvDepoIslemleri.Size = new System.Drawing.Size(196, 123);
             this.tvDepoIslemleri.TabIndex = 1;
             this.tvDepoIslemleri.Visible = false;
+            this.tvDepoIslemleri.DoubleClick += new System.EventHandler(this.tvDepoIslemleri_DoubleClick);
             // 
             // tvBilgiGirisIslemleri
             // 

@@ -15,6 +15,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
     {
         private ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
         private int secimId = -1;
+        internal bool Secim = false;
         public frmPersonellerListesi()
         {
             InitializeComponent();
@@ -56,12 +57,13 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
         private void liste_DoubleClick(object sender, EventArgs e)
         {
             secimId = (int?)liste.CurrentRow.Cells[0].Value ?? -1;
-            if (secimId > 0 && Application.OpenForms["frmPersonelGiris"] == null)
+            if (secimId > 0 && Secim && Application.OpenForms["frmPersonelGiris"] == null)
             {
-                frmPersonelGiris frm = new frmPersonelGiris();
-                frm.MdiParent = Home.ActiveForm;
-                frm.Show();
-                frm.Ac(secimId);
+                //frmPersonelGiris frm = new frmPersonelGiris();
+                //frm.MdiParent = Home.ActiveForm;
+                //frm.Show();
+                //frm.Ac(secimId);
+                Home.Aktarma = secimId;
                 Close();
             }
             else if (Application.OpenForms["frmPersonelGiris"] != null)

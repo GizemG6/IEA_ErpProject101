@@ -168,10 +168,11 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
         public void Ac(int id)
         {
             secimId = id;//dis formdan veri gelirse secimid hatası almamak icin
+            Home.tblPersonelDetayId = erp.tblPersonelDetay.Find(id);
             try
             {
                 txtDurum.Visible = true;
-                tblPersonelDetay p = erp.tblPersonelDetay.Find(id);
+                tblPersonelDetay p =Home.tblPersonelDetayId ;
                 txtPersonelAdi.Text = p.tblCariler.CariAdi;
                 txtPersonelMail.Text = p.tblCariler.CariMail;
                 txtPersonelTel.Text = p.tblCariler.CariTel;
@@ -203,7 +204,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
             }
             try
             {
-                tblPersonelDetay p = erp.tblPersonelDetay.First(x=>x.Id==secimId);
+                tblPersonelDetay p = Home.tblPersonelDetayId;
                 p.tblCariler.CariAdi = txtPersonelAdi.Text;
                 p.tblCariler.CariMail = txtPersonelMail.Text;
                 p.tblCariler.CariTel = txtPersonelTel.Text;

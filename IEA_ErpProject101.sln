@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceMulti", "InterfaceMulti\InterfaceMulti.csproj", "{F5426C17-0B4E-4627-954D-530F62E9D20B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractClasses", "AbstractClasses\AbstractClasses.csproj", "{78B718C4-D3B9-482D-812F-D57497CC953F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualMethods", "VirtualMethods\VirtualMethods.csproj", "{A03BDBF3-7C86-4E69-A136-0A0DEA42E551}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{F5426C17-0B4E-4627-954D-530F62E9D20B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5426C17-0B4E-4627-954D-530F62E9D20B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5426C17-0B4E-4627-954D-530F62E9D20B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78B718C4-D3B9-482D-812F-D57497CC953F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B718C4-D3B9-482D-812F-D57497CC953F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78B718C4-D3B9-482D-812F-D57497CC953F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78B718C4-D3B9-482D-812F-D57497CC953F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03BDBF3-7C86-4E69-A136-0A0DEA42E551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03BDBF3-7C86-4E69-A136-0A0DEA42E551}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03BDBF3-7C86-4E69-A136-0A0DEA42E551}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03BDBF3-7C86-4E69-A136-0A0DEA42E551}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

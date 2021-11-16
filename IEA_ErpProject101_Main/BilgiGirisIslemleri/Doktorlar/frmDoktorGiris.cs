@@ -20,6 +20,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
         private Numaralar n = new Numaralar();
 
         public int secimId = -1;
+
+        //private tblCariler idyeGoreBul;
         public frmDoktorGiris()
         {
             InitializeComponent();
@@ -161,9 +163,10 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
         public void Ac(int id)
         {
             secimId = id;//dis formdan veri gelirse secimid hatası almamak icin
+            Home.tblCarilerId = erp.tblCariler.Find(id);
             try
             {
-                tblCariler hst = erp.tblCariler.Find(id);
+                tblCariler hst = Home.tblCarilerId;
                 txtDoktorAdi.Text = hst.CariAdi;
                 txtDoktorMail.Text = hst.CariMail;
                 txtDoktorTel.Text = hst.CariTel;
@@ -195,7 +198,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
         {
             try
             {
-                tblCariler dr = erp.tblCariler.Find(secimId);
+                tblCariler dr = Home.tblCarilerId;
                 dr.CariAdi = txtDoktorAdi.Text;
                 dr.CariMail = txtDoktorMail.Text;
                 dr.CariTel = txtDoktorTel.Text;
@@ -226,7 +229,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
         {
             if (secimId > 0)
             {
-                tblCariler hst = erp.tblCariler.Find(secimId);
+                tblCariler hst = Home.tblCarilerId;
                 hst.isActive = false;
                 erp.SaveChanges();
                 MessageBox.Show("Silme Basarili");

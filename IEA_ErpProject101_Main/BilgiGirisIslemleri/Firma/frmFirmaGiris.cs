@@ -19,6 +19,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
         private Numaralar n = new Numaralar();
 
         public int secimId = -1;
+
+        //private tblCariler idyeGoreBul;
         public frmFirmaGiris()
         {
             InitializeComponent();
@@ -193,7 +195,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
         {
             try
             {
-                tblCariler f = erp.tblCariler.Find(secimId);
+                tblCariler f = Home.tblCarilerId;
                 f.CariAdi = txtFAdi.Text;
                 f.CariMail = txtFMail.Text;
                 f.CariTel = txtFTel.Text;
@@ -241,7 +243,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
         {
             if (secimId > 0)
             {
-                tblCariler f = erp.tblCariler.Find(secimId);
+                tblCariler f = Home.tblCarilerId;
                 f.isActive = false;
                 erp.SaveChanges();
                 MessageBox.Show("Silme Basarili");
@@ -263,9 +265,10 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
         public void Ac(int id)
         {
             secimId = id;//dis formdan veri gelirse secimid hatası almamak icin
+            Home.tblCarilerId = erp.tblCariler.Find(id);
             try
             {
-                tblCariler f = erp.tblCariler.Find(id);
+                tblCariler f = Home.tblCarilerId;
                 txtFAdi.Text = f.CariAdi;
                 txtFMail.Text = f.CariMail;
                 txtFTel.Text = f.CariTel;
