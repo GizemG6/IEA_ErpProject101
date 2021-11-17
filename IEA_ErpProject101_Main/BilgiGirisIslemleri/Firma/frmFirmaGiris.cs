@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
 {
-    public partial class frmFirmaGiris : Form
+    public partial class frmFirmaGiris : Ortaklar
     {
-        private readonly ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
+        //private readonly ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
 
-        private Numaralar n = new Numaralar();
+        //private Numaralar n = new Numaralar();
 
         public int secimId = -1;
 
@@ -36,7 +36,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
         {
             liste.Rows.Clear();
             int i = 0, sira = 1;
-            var lst = (from s in erp.tblCariler
+            var lst = (from s in db.tblCariler
                        where s.isActive == true
                        where s.CariGroupId == 3
                        select new
@@ -70,28 +70,28 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
         private void ComboDoldur()
         {
             txtFTipi.DataSource = Enum.GetValues(typeof(enumFirmaTipi));
-            var lst = erp.tblDepartmanlar.Where(x => x.GrupId == 3).ToList();
+            var lst = db.tblDepartmanlar.Where(x => x.GrupId == 3).ToList();
             txtFDepartman1.DataSource = lst;
             txtFDepartman1.ValueMember = "Id";
             txtFDepartman1.DisplayMember = "DepartmanAdi";
 
             txtFDepartman1.SelectedIndex = -1;
 
-            var lst1 = erp.tblDepartmanlar.Where(x => x.GrupId == 3).ToList();
+            var lst1 = db.tblDepartmanlar.Where(x => x.GrupId == 3).ToList();
             txtFDepartman2.DataSource = lst1;
             txtFDepartman2.ValueMember = "Id";
             txtFDepartman2.DisplayMember = "DepartmanAdi";
 
             txtFDepartman2.SelectedIndex = -1;
 
-            var lst2 = erp.tblDepartmanlar.Where(x => x.GrupId == 3).ToList();
+            var lst2 = db.tblDepartmanlar.Where(x => x.GrupId == 3).ToList();
             txtFDepartman3.DataSource = lst2;
             txtFDepartman3.ValueMember = "Id";
             txtFDepartman3.DisplayMember = "DepartmanAdi";
 
             txtFDepartman3.SelectedIndex = -1;
 
-            var lst3 = erp.tblSehirler.ToList();
+            var lst3 = db.tblSehirler.ToList();
             txtSehir.DataSource = lst3;
             txtSehir.ValueMember = "id";
             txtSehir.DisplayMember = "Sehir";
@@ -151,13 +151,13 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
                     {
                         f.SehirId = (int?)txtSehir.SelectedValue ?? -1;
                     }
-                    //f.SehirId = (int?)txtSehir.SelectedValue ?? -1;//txtSehir.SelectedValue!=null ? (int)txtSehir.SelectedValue:-1 ;//erp.tblSehirler.First(x => x.sehir == txtSehir.Text).id;
+                    //f.SehirId = (int?)txtSehir.SelectedValue ?? -1;//txtSehir.SelectedValue!=null ? (int)txtSehir.SelectedValue:-1 ;//db.tblSehirler.First(x => x.sehir == txtSehir.Text).id;
                     f.SaveUserId = 1;
                     f.SaveDate = DateTime.Now;
                     f.CariNo = fkodu;
 
-                    erp.tblCariler.Add(f);
-                    erp.SaveChanges();
+                    db.tblCariler.Add(f);
+                    db.SaveChanges();
 
                     MessageBox.Show("Kayit Basarili");
                     Temizle();
@@ -223,11 +223,11 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
                 f.CariUnvan = txtFTipi.Text;
                 f.Vdairesi = txtVergiDairesi.Text;
                 f.Tc_Vn = txtVerTcNo.Text;
-                f.SehirId = (int?)txtSehir.SelectedValue ?? -1;//txtSehir.SelectedValue!=null ? (int)txtSehir.SelectedValue:-1 ;//erp.tblSehirler.First(x => x.sehir == txtSehir.Text).id;
+                f.SehirId = (int?)txtSehir.SelectedValue ?? -1;//txtSehir.SelectedValue!=null ? (int)txtSehir.SelectedValue:-1 ;//db.tblSehirler.First(x => x.sehir == txtSehir.Text).id;
                 f.UpdateUserId = 1;
                 f.UpdateDate = DateTime.Now;
 
-                erp.SaveChanges();
+                db.SaveChanges();
 
                 MessageBox.Show("Guncelleme Basarili");
                 Temizle();
@@ -245,7 +245,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             {
                 tblCariler f = Home.tblCarilerId;
                 f.isActive = false;
-                erp.SaveChanges();
+                db.SaveChanges();
                 MessageBox.Show("Silme Basarili");
                 Temizle();
                 Listele();
@@ -265,7 +265,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
         public void Ac(int id)
         {
             secimId = id;//dis formdan veri gelirse secimid hatası almamak icin
-            Home.tblCarilerId = erp.tblCariler.Find(id);
+            Home.tblCarilerId = db.tblCariler.Find(id);
             try
             {
                 tblCariler f = Home.tblCarilerId;

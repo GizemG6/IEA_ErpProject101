@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
 {
-    public partial class frmPersonelGiris : Form
+    public partial class frmPersonelGiris : Ortaklar
     {
-        private readonly ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
+        //private readonly ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
 
-        private Numaralar n = new Numaralar();
+        //private Numaralar n = new Numaralar();
 
         public int secimId = -1;
         public frmPersonelGiris()
@@ -34,7 +34,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
         {
             liste.Rows.Clear();
             int i = 0, sira = 1;
-            var lst = (from s in erp.tblPersonelDetay
+            var lst = (from s in db.tblPersonelDetay
                        where s.tblCariler.isActive == true
                        where s.tblCariler.CariGroupId == 6
                       select s).ToList();
@@ -62,13 +62,13 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
         {
             txtPUnvan.DataSource = Enum.GetValues(typeof(enumPersonelUnvan));
             txtPUnvan.SelectedIndex = -1;
-            var lst = erp.tblDepartmanlar.Where(x => x.GrupId == 6).ToList();
+            var lst = db.tblDepartmanlar.Where(x => x.GrupId == 6).ToList();
             txtDepartman1.DataSource = lst;
             txtDepartman1.ValueMember = "Id";
             txtDepartman1.DisplayMember = "DepartmanAdi";
             txtDepartman1.SelectedIndex = -1;
 
-            var lst1 = erp.tblSehirler.ToList();
+            var lst1 = db.tblSehirler.ToList();
             txtSehir.DataSource = lst1;
             txtSehir.ValueMember = "id";
             txtSehir.DisplayMember = "Sehir";
@@ -112,21 +112,21 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
                     {
                         p.SehirId = (int?)txtSehir.SelectedValue ?? -1;
                     }
-                    //p.SehirId = (int?)txtSehir.SelectedValue ?? -1;//txtSehir.SelectedValue!=null ? (int)txtSehir.SelectedValue:-1 ;//erp.tblSehirler.First(x => x.sehir == txtSehir.Text).id;
+                    //p.SehirId = (int?)txtSehir.SelectedValue ?? -1;//txtSehir.SelectedValue!=null ? (int)txtSehir.SelectedValue:-1 ;//db.tblSehirler.First(x => x.sehir == txtSehir.Text).id;
                     p.SaveUserId = 1;
                     p.SaveDate = DateTime.Now;
                     p.CariNo = pkodu;
 
-                    erp.tblCariler.Add(p);
-                    erp.SaveChanges();
+                    db.tblCariler.Add(p);
+                    db.SaveChanges();
 
                     tblPersonelDetay pdet = new tblPersonelDetay();
-                    pdet.CariId = erp.tblCariler.First(x => x.CariAdi == txtPersonelAdi.Text).Id;
+                    pdet.CariId = db.tblCariler.First(x => x.CariAdi == txtPersonelAdi.Text).Id;
                     pdet.IsBasiTarih = txtBaslangic.Value;
                     //pdet.IsSonuTarih = txtBitis.Value;
 
-                    erp.tblPersonelDetay.Add(pdet);
-                    erp.SaveChanges();
+                    db.tblPersonelDetay.Add(pdet);
+                    db.SaveChanges();
 
                     MessageBox.Show("Kayit Basarili");
                     //Temizle();
@@ -168,7 +168,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
         public void Ac(int id)
         {
             secimId = id;//dis formdan veri gelirse secimid hatası almamak icin
-            Home.tblPersonelDetayId = erp.tblPersonelDetay.Find(id);
+            Home.tblPersonelDetayId = db.tblPersonelDetay.Find(id);
             try
             {
                 txtDurum.Visible = true;
@@ -214,7 +214,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
                 p.tblCariler.CariTipId = 6;
                 p.tblCariler.CariUnvan = txtPUnvan.Text;
                 p.tblCariler.Tc_Vn = txtPTcNo.Text;
-                p.tblCariler.SehirId = (int?)txtSehir.SelectedValue ?? -1;//txtSehir.SelectedValue!=null ? (int)txtSehir.SelectedValue:-1 ;//erp.tblSehirler.First(x => x.sehir == txtSehir.Text).id;
+                p.tblCariler.SehirId = (int?)txtSehir.SelectedValue ?? -1;//txtSehir.SelectedValue!=null ? (int)txtSehir.SelectedValue:-1 ;//db.tblSehirler.First(x => x.sehir == txtSehir.Text).id;
                 p.tblCariler.UpdateUserId = 1;
                 p.tblCariler.UpdateDate = DateTime.Now;
                 p.IsBasiTarih = txtBaslangic.Value;
@@ -223,7 +223,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
                     p.IsSonuTarih = txtBitis.Value;
                 }
 
-                erp.SaveChanges();
+                db.SaveChanges();
 
                 MessageBox.Show("Guncelleme Basarili");
                 Temizle();
@@ -239,9 +239,9 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
         {
             if (secimId > 0)
             {
-                tblCariler hst = erp.tblCariler.Find(secimId);
+                tblCariler hst = db.tblCariler.Find(secimId);
                 hst.isActive = false;
-                erp.SaveChanges();
+                db.SaveChanges();
                 MessageBox.Show("Silme Basarili");
                 Temizle();
                 Listele();

@@ -32,6 +32,7 @@ namespace IEA_ErpProject101_Main.Entity
         public virtual DbSet<tblPersonelDetay> tblPersonelDetay { get; set; }
         public virtual DbSet<tblUrunler> tblUrunler { get; set; }
         public virtual DbSet<tblStokGirisAlt> tblStokGirisAlt { get; set; }
+        public virtual DbSet<tblStokDurum> tblStokDurum { get; set; }
         public virtual DbSet<tblStokGirisUst> tblStokGirisUst { get; set; }
     }
 }

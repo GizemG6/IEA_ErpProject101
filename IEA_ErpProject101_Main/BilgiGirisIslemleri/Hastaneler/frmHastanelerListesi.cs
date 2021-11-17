@@ -1,5 +1,6 @@
 ﻿using IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler;
 using IEA_ErpProject101_Main.Entity;
+using IEA_ErpProject101_Main.Fonksiyonlar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +13,9 @@ using System.Windows.Forms;
 
 namespace IEA_ErpProject101_Main.BilgiGirisIslemleri
 {
-    public partial class frmHastanelerListesi : Form
+    public partial class frmHastanelerListesi : Ortaklar
     {
-        private ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
+        //private ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
         private int secimId = -1;
         internal bool Secim=false;
 
@@ -32,7 +33,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri
         {
             liste.Rows.Clear();
             int i = 0, sira = 1;
-            var lst = (from s in erp.tblCariler where s.isActive == true where s.CariGroupId == 1 && s.CariGroupId==1 select s).ToList();
+            var lst = (from s in db.tblCariler where s.isActive == true where s.CariGroupId == 1 && s.CariGroupId==1 select s).ToList();
             foreach (tblCariler k in lst)
             {
                 liste.Rows.Add();

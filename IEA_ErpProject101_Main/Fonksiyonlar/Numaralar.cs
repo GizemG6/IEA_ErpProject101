@@ -83,5 +83,19 @@ namespace IEA_ErpProject101_Main.Fonksiyonlar
                 return "00000001";
             }
         }
+        public string StokGirisGenelKodu()
+        {
+            try
+            {
+                var numara = (from s in erp.tblStokGirisUst orderby s.Id descending select s).First().Id;
+                numara++;
+                string num = numara.ToString().PadLeft(8, '0');
+                return num;
+            }
+            catch (Exception)
+            {
+                return "0000001";
+            }
+        }
     }
 }

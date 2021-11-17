@@ -14,11 +14,13 @@ using System.Windows.Forms;
 
 namespace IEA_ErpProject101_Main.Urun_Islemleri
 {
-    public partial class frmUrunGiris : Form
+    public partial class frmUrunGiris : Ortaklar
     {
-        ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
+        //ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
+       
+        //Numaralar n = new Numaralar();
+
         private int secimId = -1;
-        Numaralar n = new Numaralar();
         public frmUrunGiris()
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
         {
             liste.Rows.Clear();
             int i = 0, sira = 1;
-            var lst=(from s in erp.tblUrunler where s.isActive==true select s).ToList();
+            var lst=(from s in db.tblUrunler where s.isActive==true select s).ToList();
 
             foreach (var k in lst)
             {
@@ -56,7 +58,7 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
         }
         private void ComboDoldur()
         {
-            txtUTedarikciId.DataSource = (from s in erp.tblCariler where s.CariGroupId==3 where s.CariUnvan == "Distributor" select s).ToList();
+            txtUTedarikciId.DataSource = (from s in db.tblCariler where s.CariGroupId==3 where s.CariUnvan == "Distributor" select s).ToList();
             txtUTedarikciId.ValueMember = "Id";
             txtUTedarikciId.DisplayMember = "CariAdi";
             txtUTedarikciId.SelectedIndex = -1;
@@ -82,8 +84,8 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
                 urn.SaveUserId = 1;
                 urn.isActive = true;
 
-                erp.tblUrunler.Add(urn);
-                erp.SaveChanges();
+                db.tblUrunler.Add(urn);
+                db.SaveChanges();
 
                 MessageBox.Show("Kayit Basarili");
 
@@ -111,7 +113,7 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
         public void Ac(int id)
         {
             secimId = id;
-            urunler = erp.tblUrunler.Find(secimId);
+            urunler = db.tblUrunler.Find(secimId);
             
             try
             {
@@ -152,7 +154,7 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
                 urn.UpdateDate = DateTime.Now;
                 urn.UpdateUserId = 1;
                 
-                erp.SaveChanges();
+                db.SaveChanges();
 
                 MessageBox.Show("Guncelleme Basarili");
 
@@ -185,9 +187,9 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
         {
             if (secimId > 0)
             {
-                tblUrunler urn = erp.tblUrunler.Find(secimId);
+                tblUrunler urn = db.tblUrunler.Find(secimId);
                 urn.isActive = false;
-                erp.SaveChanges();
+                db.SaveChanges();
                 MessageBox.Show("Silme Basarili");
                 Temizle();
                 Listele();

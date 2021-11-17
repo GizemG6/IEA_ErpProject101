@@ -1,4 +1,5 @@
 ﻿using IEA_ErpProject101_Main.Entity;
+using IEA_ErpProject101_Main.Fonksiyonlar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +12,9 @@ using System.Windows.Forms;
 
 namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
 {
-    public partial class frmPersonellerListesi : Form
+    public partial class frmPersonellerListesi : Ortaklar
     {
-        private ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
+        //private ErpProjectWMPEntities erp = new ErpProjectWMPEntities();
         private int secimId = -1;
         internal bool Secim = false;
         public frmPersonellerListesi()
@@ -30,7 +31,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
         {
             liste.Rows.Clear();
             int i = 0, sira = 1;
-            var lst = (from s in erp.tblPersonelDetay
+            var lst = (from s in db.tblPersonelDetay
                        where s.tblCariler.isActive == true
                        where s.tblCariler.CariGroupId == 6
                        select s).ToList();

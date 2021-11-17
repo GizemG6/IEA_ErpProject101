@@ -13,11 +13,16 @@ using System.Windows.Forms;
 
 namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
 {
-    public partial class frmStokGiris : Form
+    public partial class frmStokGiris : Ortaklar
     {
-        ErpProjectWMPEntities db = new ErpProjectWMPEntities();
+        //private ErpProjectWMPEntities db = new ErpProjectWMPEntities();
 
-        private formlar f = new formlar();
+        //private formlar f = new formlar();
+
+        //Numaralar n = new Numaralar();
+
+        public string[] MyArray { get; set; }
+
         public frmStokGiris()
         {
             InitializeComponent();
@@ -30,10 +35,136 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
 
         private void ComboDoldur()
         {
+            txtGirisTipi.DataSource=Enum.GetValues(typeof(GirisTipleri));
+            txtGenelNo.Text = n.StokGirisGenelKodu();
+
+            //txtUrnCombo.DataSource = db.tblUrunler.ToList();
+            //txtUrnCombo.ValueMember = "Id";
+            //txtUrnCombo.DisplayMember = "UrunKodu";
+            try
+            {
+                txtUrnCombo.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                AutoCompleteStringCollection veri = new AutoCompleteStringCollection();
+
+                var drinst = db.tblUrunler.Where(x=>x.isActive==true).Select(item => item.UrunKodu).Distinct();
+                foreach  (string urun in drinst)
+                {
+                    veri.Add(urun);
+                    txtUrnCombo.Items.Add(urun);
+                }
+                txtUrnCombo.AutoCompleteCustomSource = veri;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            int dgv;
+            dgv = txtUrnCombo.Items.Count;
+            MyArray = new string[dgv];
+            for (int p= 0; p < dgv; p++)
+            {
+                MyArray[p] = txtUrnCombo.Items[p].ToString();
+            }
+
             txtCariGrup.DataSource = db.tblCariGruplari.ToList();
             txtCariGrup.ValueMember = "Id";
             txtCariGrup.DisplayMember = "GrupAdi";
             txtCariGrup.SelectedIndex = -1;
+        }
+
+        private void YeniKayit()
+        {
+            if (txtCariGrup.Text == "")
+            {
+                MessageBox.Show("Giris turunu secmediniz.Lutfen seciniz.");
+                return;
+            }
+            Liste.AllowUserToAddRows = false;
+            try
+            {
+                #region Stok Giris Ust Kayit
+                tblStokGirisUst ust = new tblStokGirisUst
+                {
+                    GenelNo = int.Parse(txtGenelNo.Text),
+                    CariGrupId = (int)txtCariGrup.SelectedValue,
+                    CariAdiId = db.tblCariler.First(x => x.CariAdi == txtCariAdi.Text).Id,
+                    GirisTipi = (int)txtGirisTipi.SelectedValue,
+                    FaturaNo = txtFaturaNo.Text,
+                    FaturaTarih = txtGirisTarih.Value,
+                    Aciklama = txtAciklama.Text,
+                    isActive = true,
+                    SaveDate = DateTime.Now,
+                    SaveUserId = 1
+                };
+                db.tblStokGirisUst.Add(ust);
+                db.SaveChanges(); 
+                #endregion
+
+                tblStokDurum[] drm = new tblStokDurum[Liste.RowCount];
+
+                tblStokGirisAlt[] alt = new tblStokGirisAlt[Liste.RowCount];
+                for (int i = 0; i < Liste.RowCount; i++)
+                {
+                    string barkod = Liste.Rows[i].Cells[2].Value.ToString() + "/" + 
+                        Liste.Rows[i].Cells[3].Value.ToString();
+
+                    #region Stok Durum Kayit
+                    drm[i] = new tblStokDurum();
+                    var srg = (from s in db.tblStokDurum
+                               where s.Barkod == barkod
+                               select new { stokadet = s.StokAdet, rafadet = s.RafAdet }).ToList();
+
+                    if (srg.Count == 0)
+                    {
+                        drm[i].StokKodu = "1";
+                        drm[i].Barkod = barkod;
+                        drm[i].Urun = Liste.Rows[i].Cells[2].Value.ToString();
+                        drm[i].Lot = Liste.Rows[i].Cells[3].Value.ToString();
+                        drm[i].StokAdet = int.Parse(Liste.Rows[i].Cells[4].Value.ToString());
+                        drm[i].RafAdet = int.Parse(Liste.Rows[i].Cells[4].Value.ToString());
+                        drm[i].KonsinyeAdet = 0;
+                        drm[i].SubeAdet = 0;
+                        drm[i].UT = DateTime.Parse(Liste.Rows[i].Cells[6].Value.ToString());
+                        drm[i].SKT = DateTime.Parse(Liste.Rows[i].Cells[7].Value.ToString());
+
+                        db.tblStokDurum.Add(drm[i]);
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        tblStokDurum sdurum = db.tblStokDurum.First(x => x.Barkod == barkod);
+                        sdurum.StokAdet += Convert.ToInt32(Liste.Rows[i].Cells[4].Value);
+                        sdurum.RafAdet += Convert.ToInt32(Liste.Rows[i].Cells[4].Value);
+                        db.SaveChanges();
+                    }
+                    #endregion
+
+
+                    #region Stok Giris Alt Kayit
+                    alt[i] = new tblStokGirisAlt();
+                    alt[i].GenelNo = int.Parse(txtGenelNo.Text);
+                    alt[i].SiraNo = i + 1;
+                    alt[i].Barkod = barkod;
+                    alt[i].UrunKodu = Liste.Rows[i].Cells[2].Value.ToString();
+                    alt[i].LotSeriNo = Liste.Rows[i].Cells[3].Value.ToString();
+                    alt[i].Adet = int.Parse(Liste.Rows[i].Cells[4].Value.ToString());
+                    alt[i].Not = Liste.Rows[i].Cells[5].Value.ToString();
+                    alt[i].UT = DateTime.Parse(Liste.Rows[i].Cells[6].Value.ToString());
+                    alt[i].SKT = DateTime.Parse(Liste.Rows[i].Cells[7].Value.ToString());
+                    alt[i].AlisFiyat = Decimal.Parse(Liste.Rows[i].Cells[8].Value.ToString()); 
+                    #endregion
+
+                }
+                db.tblStokGirisAlt.AddRange(alt);
+                db.SaveChanges();
+
+                MessageBox.Show("Kayit Basarili");
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("103"+"---"+e.Message);
+            }
         }
         #region Butonlar
 
@@ -128,5 +259,77 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
         }
 
         #endregion
+        #region DataGridView Islemleri
+
+        private void Liste_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            try
+            {
+                TextBox txt = e.Control as TextBox;
+                if (Liste.CurrentCell.ColumnIndex == 2 && txt != null)
+                {
+                    txt.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    txt.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    txt.AutoCompleteCustomSource.AddRange(MyArray);
+                }
+                else if (Liste.CurrentCell.ColumnIndex != 2 && txt != null)
+                {
+                    txt.AutoCompleteMode = AutoCompleteMode.None;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Liste_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 2)
+                {
+                    foreach (DataGridViewCell cell in Liste.SelectedCells)
+                    {
+                        int i = 0;
+                        if (cell.Value != null)
+                        {
+                            string a = "";
+                            if (Liste.CurrentRow != null)
+                            {
+                                a = Liste.CurrentRow.Cells[2].Value.ToString();
+                            }
+                            try
+                            {
+                                var lst = (from s in db.tblUrunler
+                                           where s.UrunKodu == a
+                                           select s).First();
+
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("101" + ex.Message);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Urun kodu bos olmamali");
+                            if (Liste.CurrentRow != null) Liste.CurrentRow.Cells[2].Value = "";
+                        }
+                        i++;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("102" + ex.Message);
+            }
+        }
+        #endregion
+
+        private void btnKayit_Click(object sender, EventArgs e)
+        {
+            YeniKayit();
+        }
     }
 }
