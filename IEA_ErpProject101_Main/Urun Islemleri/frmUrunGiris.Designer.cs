@@ -38,8 +38,18 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             this.label6 = new System.Windows.Forms.Label();
             this.pnlAlt = new System.Windows.Forms.Panel();
             this.liste = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiraNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GenelNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UrunKodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UrunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlUst = new System.Windows.Forms.Panel();
             this.lblUrunKodu = new System.Windows.Forms.Label();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnTemizle = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnFormCikis = new System.Windows.Forms.Button();
+            this.btnKayit = new System.Windows.Forms.Button();
             this.txtKutuIcerik = new System.Windows.Forms.TextBox();
             this.txtUrunAcik = new System.Windows.Forms.TextBox();
             this.txtAlisF = new System.Windows.Forms.TextBox();
@@ -50,20 +60,14 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             this.txtUrunAdi = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtSatisF = new System.Windows.Forms.TextBox();
-            this.btnSil = new System.Windows.Forms.Button();
-            this.btnTemizle = new System.Windows.Forms.Button();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.btnFormCikis = new System.Windows.Forms.Button();
-            this.btnKayit = new System.Windows.Forms.Button();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SiraNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GenelNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UrunKodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UrunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlOrta = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtKullanimAy = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.liste)).BeginInit();
             this.pnlUst.SuspendLayout();
             this.pnlOrta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKullanimAy)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter2
@@ -158,6 +162,38 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             this.liste.TabIndex = 104;
             this.liste.DoubleClick += new System.EventHandler(this.liste_DoubleClick);
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // SiraNo
+            // 
+            this.SiraNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SiraNo.HeaderText = "Sıra No";
+            this.SiraNo.Name = "SiraNo";
+            this.SiraNo.Width = 67;
+            // 
+            // GenelNo
+            // 
+            this.GenelNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.GenelNo.HeaderText = "Genel No";
+            this.GenelNo.Name = "GenelNo";
+            this.GenelNo.Width = 77;
+            // 
+            // UrunKodu
+            // 
+            this.UrunKodu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UrunKodu.HeaderText = "Urun Kodu";
+            this.UrunKodu.Name = "UrunKodu";
+            // 
+            // UrunAdi
+            // 
+            this.UrunAdi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UrunAdi.HeaderText = "Urun Adı";
+            this.UrunAdi.Name = "UrunAdi";
+            // 
             // pnlUst
             // 
             this.pnlUst.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -183,6 +219,60 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             this.lblUrunKodu.TabIndex = 5;
             this.lblUrunKodu.Text = "***";
             this.lblUrunKodu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnSil
+            // 
+            this.btnSil.Image = global::IEA_ErpProject101_Main.Properties.Resources.Sil24x24;
+            this.btnSil.Location = new System.Drawing.Point(141, 8);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(39, 30);
+            this.btnSil.TabIndex = 3;
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Image = global::IEA_ErpProject101_Main.Properties.Resources.Sil32x32;
+            this.btnTemizle.Location = new System.Drawing.Point(186, 8);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(39, 30);
+            this.btnTemizle.TabIndex = 4;
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.BackgroundImage = global::IEA_ErpProject101_Main.Properties.Resources.Update32x32;
+            this.btnGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuncelle.Location = new System.Drawing.Point(84, 8);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(39, 30);
+            this.btnGuncelle.TabIndex = 2;
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // btnFormCikis
+            // 
+            this.btnFormCikis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFormCikis.BackgroundImage = global::IEA_ErpProject101_Main.Properties.Resources.exit_48;
+            this.btnFormCikis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFormCikis.Location = new System.Drawing.Point(749, 3);
+            this.btnFormCikis.Name = "btnFormCikis";
+            this.btnFormCikis.Size = new System.Drawing.Size(39, 40);
+            this.btnFormCikis.TabIndex = 0;
+            this.btnFormCikis.UseVisualStyleBackColor = true;
+            this.btnFormCikis.Click += new System.EventHandler(this.btnFormCikis_Click);
+            // 
+            // btnKayit
+            // 
+            this.btnKayit.BackgroundImage = global::IEA_ErpProject101_Main.Properties.Resources.Save_icon32x32;
+            this.btnKayit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnKayit.Location = new System.Drawing.Point(27, 8);
+            this.btnKayit.Name = "btnKayit";
+            this.btnKayit.Size = new System.Drawing.Size(39, 30);
+            this.btnKayit.TabIndex = 1;
+            this.btnKayit.UseVisualStyleBackColor = true;
+            this.btnKayit.Click += new System.EventHandler(this.btnKayit_Click);
             // 
             // txtKutuIcerik
             // 
@@ -269,95 +359,12 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             this.txtSatisF.Size = new System.Drawing.Size(144, 20);
             this.txtSatisF.TabIndex = 6;
             // 
-            // btnSil
-            // 
-            this.btnSil.Image = global::IEA_ErpProject101_Main.Properties.Resources.Sil24x24;
-            this.btnSil.Location = new System.Drawing.Point(141, 8);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(39, 30);
-            this.btnSil.TabIndex = 3;
-            this.btnSil.UseVisualStyleBackColor = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnTemizle
-            // 
-            this.btnTemizle.Image = global::IEA_ErpProject101_Main.Properties.Resources.Sil32x32;
-            this.btnTemizle.Location = new System.Drawing.Point(186, 8);
-            this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(39, 30);
-            this.btnTemizle.TabIndex = 4;
-            this.btnTemizle.UseVisualStyleBackColor = true;
-            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.BackgroundImage = global::IEA_ErpProject101_Main.Properties.Resources.Update32x32;
-            this.btnGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuncelle.Location = new System.Drawing.Point(84, 8);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(39, 30);
-            this.btnGuncelle.TabIndex = 2;
-            this.btnGuncelle.UseVisualStyleBackColor = true;
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
-            // btnFormCikis
-            // 
-            this.btnFormCikis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFormCikis.BackgroundImage = global::IEA_ErpProject101_Main.Properties.Resources.exit_48;
-            this.btnFormCikis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFormCikis.Location = new System.Drawing.Point(749, 3);
-            this.btnFormCikis.Name = "btnFormCikis";
-            this.btnFormCikis.Size = new System.Drawing.Size(39, 40);
-            this.btnFormCikis.TabIndex = 0;
-            this.btnFormCikis.UseVisualStyleBackColor = true;
-            this.btnFormCikis.Click += new System.EventHandler(this.btnFormCikis_Click);
-            // 
-            // btnKayit
-            // 
-            this.btnKayit.BackgroundImage = global::IEA_ErpProject101_Main.Properties.Resources.Save_icon32x32;
-            this.btnKayit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnKayit.Location = new System.Drawing.Point(27, 8);
-            this.btnKayit.Name = "btnKayit";
-            this.btnKayit.Size = new System.Drawing.Size(39, 30);
-            this.btnKayit.TabIndex = 1;
-            this.btnKayit.UseVisualStyleBackColor = true;
-            this.btnKayit.Click += new System.EventHandler(this.btnKayit_Click);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // SiraNo
-            // 
-            this.SiraNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.SiraNo.HeaderText = "Sıra No";
-            this.SiraNo.Name = "SiraNo";
-            this.SiraNo.Width = 67;
-            // 
-            // GenelNo
-            // 
-            this.GenelNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.GenelNo.HeaderText = "Genel No";
-            this.GenelNo.Name = "GenelNo";
-            this.GenelNo.Width = 77;
-            // 
-            // UrunKodu
-            // 
-            this.UrunKodu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.UrunKodu.HeaderText = "Urun Kodu";
-            this.UrunKodu.Name = "UrunKodu";
-            // 
-            // UrunAdi
-            // 
-            this.UrunAdi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.UrunAdi.HeaderText = "Urun Adı";
-            this.UrunAdi.Name = "UrunAdi";
-            // 
             // pnlOrta
             // 
             this.pnlOrta.BackColor = System.Drawing.Color.LightCoral;
+            this.pnlOrta.Controls.Add(this.txtKullanimAy);
+            this.pnlOrta.Controls.Add(this.label8);
+            this.pnlOrta.Controls.Add(this.label7);
             this.pnlOrta.Controls.Add(this.label2);
             this.pnlOrta.Controls.Add(this.label18);
             this.pnlOrta.Controls.Add(this.txtAlisF);
@@ -380,6 +387,33 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             this.pnlOrta.Size = new System.Drawing.Size(800, 231);
             this.pnlOrta.TabIndex = 113;
             // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Bisque;
+            this.label7.Location = new System.Drawing.Point(348, 161);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 19);
+            this.label7.TabIndex = 114;
+            this.label7.Text = "Kullanim Süresi:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Bisque;
+            this.label8.Location = new System.Drawing.Point(454, 184);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(144, 19);
+            this.label8.TabIndex = 115;
+            this.label8.Text = "Giris ay olarak yapilacak";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtKullanimAy
+            // 
+            this.txtKullanimAy.Location = new System.Drawing.Point(454, 160);
+            this.txtKullanimAy.Name = "txtKullanimAy";
+            this.txtKullanimAy.Size = new System.Drawing.Size(144, 20);
+            this.txtKullanimAy.TabIndex = 116;
+            // 
             // frmUrunGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,6 +431,7 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             this.pnlUst.ResumeLayout(false);
             this.pnlOrta.ResumeLayout(false);
             this.pnlOrta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKullanimAy)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,5 +470,8 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
         private System.Windows.Forms.DataGridViewTextBoxColumn UrunKodu;
         private System.Windows.Forms.DataGridViewTextBoxColumn UrunAdi;
         private System.Windows.Forms.Panel pnlOrta;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown txtKullanimAy;
     }
 }

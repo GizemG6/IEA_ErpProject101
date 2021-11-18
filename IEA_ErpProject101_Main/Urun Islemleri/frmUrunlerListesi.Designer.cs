@@ -40,22 +40,22 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SiraNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GenelNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UrunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UrunKodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UrunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.liste)).BeginInit();
             this.pnlUst.SuspendLayout();
             this.SuspendLayout();
             // 
             // liste
             // 
-            this.liste.BackgroundColor = System.Drawing.Color.PowderBlue;
+            this.liste.BackgroundColor = System.Drawing.Color.LightCoral;
             this.liste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.liste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.SiraNo,
             this.GenelNo,
-            this.UrunAdi,
-            this.UrunKodu});
+            this.UrunKodu,
+            this.UrunAdi});
             this.liste.Dock = System.Windows.Forms.DockStyle.Top;
             this.liste.Location = new System.Drawing.Point(0, 45);
             this.liste.Name = "liste";
@@ -159,17 +159,17 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             this.GenelNo.Name = "GenelNo";
             this.GenelNo.Width = 77;
             // 
-            // UrunAdi
-            // 
-            this.UrunAdi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.UrunAdi.HeaderText = "Urun Adı";
-            this.UrunAdi.Name = "UrunAdi";
-            // 
             // UrunKodu
             // 
             this.UrunKodu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.UrunKodu.HeaderText = "Urun Kodu";
             this.UrunKodu.Name = "UrunKodu";
+            // 
+            // UrunAdi
+            // 
+            this.UrunAdi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UrunAdi.HeaderText = "Urun Adı";
+            this.UrunAdi.Name = "UrunAdi";
             // 
             // frmUrunlerListesi
             // 
@@ -200,7 +200,7 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn SiraNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn GenelNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UrunAdi;
         private System.Windows.Forms.DataGridViewTextBoxColumn UrunKodu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UrunAdi;
     }
 }

@@ -31,6 +31,13 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
         {
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.liste = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiraNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CariKodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CariAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CariTelefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CariMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.YetkiliKisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlOrta = new System.Windows.Forms.Panel();
             this.txtKayitBul = new System.Windows.Forms.TextBox();
             this.txtFTipi = new System.Windows.Forms.ComboBox();
@@ -79,13 +86,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnFormCikis = new System.Windows.Forms.Button();
             this.btnKayit = new System.Windows.Forms.Button();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SiraNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CariKodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CariAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CariTelefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CariMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.YetkiliKisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.liste)).BeginInit();
             this.pnlOrta.SuspendLayout();
             this.pnlUst.SuspendLayout();
@@ -93,7 +93,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // splitter2
             // 
-            this.splitter2.BackColor = System.Drawing.Color.Red;
+            this.splitter2.BackColor = System.Drawing.Color.Purple;
             this.splitter2.Cursor = System.Windows.Forms.Cursors.HSplit;
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter2.Location = new System.Drawing.Point(0, 303);
@@ -120,9 +120,56 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             this.liste.TabIndex = 61;
             this.liste.DoubleClick += new System.EventHandler(this.liste_DoubleClick);
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // SiraNo
+            // 
+            this.SiraNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SiraNo.HeaderText = "Sıra No";
+            this.SiraNo.Name = "SiraNo";
+            this.SiraNo.Width = 50;
+            // 
+            // CariKodu
+            // 
+            this.CariKodu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.CariKodu.HeaderText = "Firma Kodu";
+            this.CariKodu.Name = "CariKodu";
+            this.CariKodu.Width = 78;
+            // 
+            // CariAdi
+            // 
+            this.CariAdi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CariAdi.HeaderText = "Firma Adı";
+            this.CariAdi.Name = "CariAdi";
+            // 
+            // CariTelefon
+            // 
+            this.CariTelefon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.CariTelefon.HeaderText = "Firma Telefon";
+            this.CariTelefon.Name = "CariTelefon";
+            this.CariTelefon.Width = 88;
+            // 
+            // CariMail
+            // 
+            this.CariMail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.CariMail.HeaderText = "Firma Mail";
+            this.CariMail.Name = "CariMail";
+            this.CariMail.Width = 73;
+            // 
+            // YetkiliKisi
+            // 
+            this.YetkiliKisi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.YetkiliKisi.HeaderText = "Firma Yetkili Kisi";
+            this.YetkiliKisi.Name = "YetkiliKisi";
+            // 
             // pnlOrta
             // 
             this.pnlOrta.AutoScroll = true;
+            this.pnlOrta.BackColor = System.Drawing.Color.LightGreen;
             this.pnlOrta.Controls.Add(this.txtKayitBul);
             this.pnlOrta.Controls.Add(this.txtFTipi);
             this.pnlOrta.Controls.Add(this.txtFMail);
@@ -178,21 +225,21 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // txtFTipi
             // 
             this.txtFTipi.FormattingEnabled = true;
-            this.txtFTipi.Location = new System.Drawing.Point(118, 27);
+            this.txtFTipi.Location = new System.Drawing.Point(118, 36);
             this.txtFTipi.Name = "txtFTipi";
             this.txtFTipi.Size = new System.Drawing.Size(100, 21);
             this.txtFTipi.TabIndex = 0;
             // 
             // txtFMail
             // 
-            this.txtFMail.Location = new System.Drawing.Point(118, 88);
+            this.txtFMail.Location = new System.Drawing.Point(118, 124);
             this.txtFMail.Name = "txtFMail";
             this.txtFMail.Size = new System.Drawing.Size(167, 20);
             this.txtFMail.TabIndex = 3;
             // 
             // txtFTel
             // 
-            this.txtFTel.Location = new System.Drawing.Point(118, 69);
+            this.txtFTel.Location = new System.Drawing.Point(118, 97);
             this.txtFTel.Mask = "(999) 000-0000";
             this.txtFTel.Name = "txtFTel";
             this.txtFTel.Size = new System.Drawing.Size(100, 20);
@@ -200,8 +247,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(12, 50);
+            this.label1.BackColor = System.Drawing.Color.LightGreen;
+            this.label1.Location = new System.Drawing.Point(12, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 19);
             this.label1.TabIndex = 4;
@@ -218,7 +265,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtFYTel3
             // 
-            this.txtFYTel3.Location = new System.Drawing.Point(514, 90);
+            this.txtFYTel3.Location = new System.Drawing.Point(518, 111);
             this.txtFYTel3.Mask = "(999) 000-0000";
             this.txtFYTel3.Name = "txtFYTel3";
             this.txtFYTel3.Size = new System.Drawing.Size(100, 20);
@@ -226,7 +273,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtFYTel2
             // 
-            this.txtFYTel2.Location = new System.Drawing.Point(514, 70);
+            this.txtFYTel2.Location = new System.Drawing.Point(518, 91);
             this.txtFYTel2.Mask = "(999) 000-0000";
             this.txtFYTel2.Name = "txtFYTel2";
             this.txtFYTel2.Size = new System.Drawing.Size(100, 20);
@@ -234,8 +281,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(12, 140);
+            this.label4.BackColor = System.Drawing.Color.LightGreen;
+            this.label4.Location = new System.Drawing.Point(317, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 19);
             this.label4.TabIndex = 7;
@@ -244,7 +291,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtFYTel1
             // 
-            this.txtFYTel1.Location = new System.Drawing.Point(514, 52);
+            this.txtFYTel1.Location = new System.Drawing.Point(518, 73);
             this.txtFYTel1.Mask = "(999) 000-0000";
             this.txtFYTel1.Name = "txtFYTel1";
             this.txtFYTel1.Size = new System.Drawing.Size(100, 20);
@@ -252,8 +299,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // label5
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Location = new System.Drawing.Point(268, 140);
+            this.label5.BackColor = System.Drawing.Color.LightGreen;
+            this.label5.Location = new System.Drawing.Point(581, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 19);
             this.label5.TabIndex = 8;
@@ -262,7 +309,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtFYcep3
             // 
-            this.txtFYcep3.Location = new System.Drawing.Point(621, 89);
+            this.txtFYcep3.Location = new System.Drawing.Point(625, 110);
             this.txtFYcep3.Mask = "(999) 000-0000";
             this.txtFYcep3.Name = "txtFYcep3";
             this.txtFYcep3.Size = new System.Drawing.Size(100, 20);
@@ -270,8 +317,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(12, 29);
+            this.label6.BackColor = System.Drawing.Color.LightGreen;
+            this.label6.Location = new System.Drawing.Point(12, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 19);
             this.label6.TabIndex = 9;
@@ -280,7 +327,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtFYcep2
             // 
-            this.txtFYcep2.Location = new System.Drawing.Point(621, 70);
+            this.txtFYcep2.Location = new System.Drawing.Point(625, 91);
             this.txtFYcep2.Mask = "(999) 000-0000";
             this.txtFYcep2.Name = "txtFYcep2";
             this.txtFYcep2.Size = new System.Drawing.Size(100, 20);
@@ -288,8 +335,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // label7
             // 
-            this.label7.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label7.Location = new System.Drawing.Point(287, 27);
+            this.label7.BackColor = System.Drawing.Color.LightGreen;
+            this.label7.Location = new System.Drawing.Point(291, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 20);
             this.label7.TabIndex = 10;
@@ -298,7 +345,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtFYcep1
             // 
-            this.txtFYcep1.Location = new System.Drawing.Point(621, 53);
+            this.txtFYcep1.Location = new System.Drawing.Point(625, 74);
             this.txtFYcep1.Mask = "(999) 000-0000";
             this.txtFYcep1.Name = "txtFYcep1";
             this.txtFYcep1.Size = new System.Drawing.Size(100, 20);
@@ -306,8 +353,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label8.Location = new System.Drawing.Point(390, 30);
+            this.label8.BackColor = System.Drawing.Color.LightGreen;
+            this.label8.Location = new System.Drawing.Point(394, 51);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 19);
             this.label8.TabIndex = 11;
@@ -317,15 +364,15 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // txtSehir
             // 
             this.txtSehir.FormattingEnabled = true;
-            this.txtSehir.Location = new System.Drawing.Point(118, 108);
+            this.txtSehir.Location = new System.Drawing.Point(118, 153);
             this.txtSehir.Name = "txtSehir";
             this.txtSehir.Size = new System.Drawing.Size(100, 21);
             this.txtSehir.TabIndex = 4;
             // 
             // label9
             // 
-            this.label9.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label9.Location = new System.Drawing.Point(727, 31);
+            this.label9.BackColor = System.Drawing.Color.LightGreen;
+            this.label9.Location = new System.Drawing.Point(731, 52);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 19);
             this.label9.TabIndex = 12;
@@ -335,15 +382,15 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // txtFDepartman3
             // 
             this.txtFDepartman3.FormattingEnabled = true;
-            this.txtFDepartman3.Location = new System.Drawing.Point(390, 89);
+            this.txtFDepartman3.Location = new System.Drawing.Point(394, 110);
             this.txtFDepartman3.Name = "txtFDepartman3";
             this.txtFDepartman3.Size = new System.Drawing.Size(121, 21);
             this.txtFDepartman3.TabIndex = 20;
             // 
             // label10
             // 
-            this.label10.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label10.Location = new System.Drawing.Point(514, 31);
+            this.label10.BackColor = System.Drawing.Color.LightGreen;
+            this.label10.Location = new System.Drawing.Point(518, 52);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 19);
             this.label10.TabIndex = 13;
@@ -353,15 +400,15 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // txtFDepartman2
             // 
             this.txtFDepartman2.FormattingEnabled = true;
-            this.txtFDepartman2.Location = new System.Drawing.Point(390, 69);
+            this.txtFDepartman2.Location = new System.Drawing.Point(394, 90);
             this.txtFDepartman2.Name = "txtFDepartman2";
             this.txtFDepartman2.Size = new System.Drawing.Size(121, 21);
             this.txtFDepartman2.TabIndex = 15;
             // 
             // label11
             // 
-            this.label11.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label11.Location = new System.Drawing.Point(621, 31);
+            this.label11.BackColor = System.Drawing.Color.LightGreen;
+            this.label11.Location = new System.Drawing.Point(625, 52);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(100, 19);
             this.label11.TabIndex = 14;
@@ -371,14 +418,14 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // txtFDepartman1
             // 
             this.txtFDepartman1.FormattingEnabled = true;
-            this.txtFDepartman1.Location = new System.Drawing.Point(390, 52);
+            this.txtFDepartman1.Location = new System.Drawing.Point(394, 73);
             this.txtFDepartman1.Name = "txtFDepartman1";
             this.txtFDepartman1.Size = new System.Drawing.Size(121, 21);
             this.txtFDepartman1.TabIndex = 10;
             // 
             // label12
             // 
-            this.label12.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label12.BackColor = System.Drawing.Color.LightGreen;
             this.label12.Location = new System.Drawing.Point(287, 7);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 19);
@@ -395,22 +442,22 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtFYet1
             // 
-            this.txtFYet1.Location = new System.Drawing.Point(287, 50);
+            this.txtFYet1.Location = new System.Drawing.Point(291, 71);
             this.txtFYet1.Name = "txtFYet1";
             this.txtFYet1.Size = new System.Drawing.Size(100, 20);
             this.txtFYet1.TabIndex = 9;
             // 
             // txtFYet2
             // 
-            this.txtFYet2.Location = new System.Drawing.Point(287, 69);
+            this.txtFYet2.Location = new System.Drawing.Point(291, 90);
             this.txtFYet2.Name = "txtFYet2";
             this.txtFYet2.Size = new System.Drawing.Size(100, 20);
             this.txtFYet2.TabIndex = 14;
             // 
             // label16
             // 
-            this.label16.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label16.Location = new System.Drawing.Point(12, 108);
+            this.label16.BackColor = System.Drawing.Color.LightGreen;
+            this.label16.Location = new System.Drawing.Point(12, 154);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(100, 19);
             this.label16.TabIndex = 37;
@@ -419,15 +466,15 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtFYet3
             // 
-            this.txtFYet3.Location = new System.Drawing.Point(287, 88);
+            this.txtFYet3.Location = new System.Drawing.Point(291, 109);
             this.txtFYet3.Name = "txtFYet3";
             this.txtFYet3.Size = new System.Drawing.Size(100, 20);
             this.txtFYet3.TabIndex = 19;
             // 
             // label15
             // 
-            this.label15.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label15.Location = new System.Drawing.Point(12, 89);
+            this.label15.BackColor = System.Drawing.Color.LightGreen;
+            this.label15.Location = new System.Drawing.Point(12, 126);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(100, 19);
             this.label15.TabIndex = 36;
@@ -436,15 +483,15 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtFEmail1
             // 
-            this.txtFEmail1.Location = new System.Drawing.Point(727, 53);
+            this.txtFEmail1.Location = new System.Drawing.Point(731, 74);
             this.txtFEmail1.Name = "txtFEmail1";
             this.txtFEmail1.Size = new System.Drawing.Size(116, 20);
             this.txtFEmail1.TabIndex = 13;
             // 
             // label14
             // 
-            this.label14.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label14.Location = new System.Drawing.Point(12, 69);
+            this.label14.BackColor = System.Drawing.Color.LightGreen;
+            this.label14.Location = new System.Drawing.Point(12, 98);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(100, 19);
             this.label14.TabIndex = 35;
@@ -453,14 +500,14 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtFEmail2
             // 
-            this.txtFEmail2.Location = new System.Drawing.Point(727, 70);
+            this.txtFEmail2.Location = new System.Drawing.Point(731, 91);
             this.txtFEmail2.Name = "txtFEmail2";
             this.txtFEmail2.Size = new System.Drawing.Size(116, 20);
             this.txtFEmail2.TabIndex = 18;
             // 
             // label13
             // 
-            this.label13.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label13.BackColor = System.Drawing.Color.LightGreen;
             this.label13.Location = new System.Drawing.Point(496, 8);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(100, 19);
@@ -470,14 +517,14 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtFEmail3
             // 
-            this.txtFEmail3.Location = new System.Drawing.Point(727, 90);
+            this.txtFEmail3.Location = new System.Drawing.Point(731, 111);
             this.txtFEmail3.Name = "txtFEmail3";
             this.txtFEmail3.Size = new System.Drawing.Size(116, 20);
             this.txtFEmail3.TabIndex = 23;
             // 
             // txtAdres2
             // 
-            this.txtAdres2.Location = new System.Drawing.Point(374, 140);
+            this.txtAdres2.Location = new System.Drawing.Point(687, 154);
             this.txtAdres2.Multiline = true;
             this.txtAdres2.Name = "txtAdres2";
             this.txtAdres2.Size = new System.Drawing.Size(144, 76);
@@ -485,7 +532,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtAdres1
             // 
-            this.txtAdres1.Location = new System.Drawing.Point(118, 140);
+            this.txtAdres1.Location = new System.Drawing.Point(423, 154);
             this.txtAdres1.Multiline = true;
             this.txtAdres1.Name = "txtAdres1";
             this.txtAdres1.Size = new System.Drawing.Size(144, 76);
@@ -493,7 +540,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             // 
             // txtFAdi
             // 
-            this.txtFAdi.Location = new System.Drawing.Point(118, 50);
+            this.txtFAdi.Location = new System.Drawing.Point(118, 63);
             this.txtFAdi.Name = "txtFAdi";
             this.txtFAdi.Size = new System.Drawing.Size(144, 20);
             this.txtFAdi.TabIndex = 1;
@@ -586,52 +633,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
             this.btnKayit.TabIndex = 1;
             this.btnKayit.UseVisualStyleBackColor = true;
             this.btnKayit.Click += new System.EventHandler(this.btnKayit_Click);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // SiraNo
-            // 
-            this.SiraNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.SiraNo.HeaderText = "Sıra No";
-            this.SiraNo.Name = "SiraNo";
-            this.SiraNo.Width = 67;
-            // 
-            // CariKodu
-            // 
-            this.CariKodu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.CariKodu.HeaderText = "Firma Kodu";
-            this.CariKodu.Name = "CariKodu";
-            this.CariKodu.Width = 85;
-            // 
-            // CariAdi
-            // 
-            this.CariAdi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CariAdi.HeaderText = "Firma Adı";
-            this.CariAdi.Name = "CariAdi";
-            // 
-            // CariTelefon
-            // 
-            this.CariTelefon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.CariTelefon.HeaderText = "Firma Telefon";
-            this.CariTelefon.Name = "CariTelefon";
-            this.CariTelefon.Width = 96;
-            // 
-            // CariMail
-            // 
-            this.CariMail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.CariMail.HeaderText = "Firma Mail";
-            this.CariMail.Name = "CariMail";
-            this.CariMail.Width = 79;
-            // 
-            // YetkiliKisi
-            // 
-            this.YetkiliKisi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.YetkiliKisi.HeaderText = "Firma Yetkili Kisi";
-            this.YetkiliKisi.Name = "YetkiliKisi";
             // 
             // frmFirmaGiris
             // 

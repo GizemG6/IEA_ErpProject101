@@ -54,6 +54,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
             // 
             // liste
             // 
+            this.liste.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.liste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.liste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,

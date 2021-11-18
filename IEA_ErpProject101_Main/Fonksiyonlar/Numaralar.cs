@@ -73,7 +73,7 @@ namespace IEA_ErpProject101_Main.Fonksiyonlar
         {
             try
             {
-                var numara = (from s in erp.tblCariler orderby s.Id descending select s).First().Id;
+                var numara = (from s in erp.tblUrunler orderby s.Id descending select s).First().Id;
                 numara++;
                 string num = "U" + numara.ToString().PadLeft(8, '0');
                 return num;
@@ -94,7 +94,7 @@ namespace IEA_ErpProject101_Main.Fonksiyonlar
             }
             catch (Exception)
             {
-                return "0000001";
+                return "00000001";
             }
         }
     }

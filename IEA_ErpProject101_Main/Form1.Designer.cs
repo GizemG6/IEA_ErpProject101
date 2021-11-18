@@ -36,7 +36,6 @@ namespace IEA_ErpProject101_Main
             this.pnlAltBilgi = new System.Windows.Forms.Panel();
             this.pnlSolMenu = new System.Windows.Forms.Panel();
             this.spcSolMenuOrta = new System.Windows.Forms.SplitContainer();
-            this.tvUrunIslemleri = new System.Windows.Forms.TreeView();
             this.tvDepoIslemleri = new System.Windows.Forms.TreeView();
             this.tvBilgiGirisIslemleri = new System.Windows.Forms.TreeView();
             this.tv12 = new System.Windows.Forms.TreeView();
@@ -48,6 +47,7 @@ namespace IEA_ErpProject101_Main
             this.tv6 = new System.Windows.Forms.TreeView();
             this.tv5 = new System.Windows.Forms.TreeView();
             this.tv4 = new System.Windows.Forms.TreeView();
+            this.tvUrunIslemleri = new System.Windows.Forms.TreeView();
             this.btnUrunIslemleri = new System.Windows.Forms.Button();
             this.btnDepoIslemleri = new System.Windows.Forms.Button();
             this.btnBilgiGiris = new System.Windows.Forms.Button();
@@ -77,7 +77,7 @@ namespace IEA_ErpProject101_Main
             this.tabUstMenu.SelectedIndex = 0;
             this.tabUstMenu.Size = new System.Drawing.Size(805, 100);
             this.tabUstMenu.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabUstMenu.TabIndex = 0;
+            this.tabUstMenu.TabIndex = 1;
             // 
             // tapPGenel
             // 
@@ -141,7 +141,6 @@ namespace IEA_ErpProject101_Main
             // 
             // spcSolMenuOrta.Panel1
             // 
-            this.spcSolMenuOrta.Panel1.Controls.Add(this.tvDepoIslemleri);
             this.spcSolMenuOrta.Panel1.Controls.Add(this.tvBilgiGirisIslemleri);
             this.spcSolMenuOrta.Panel1.Controls.Add(this.tv12);
             this.spcSolMenuOrta.Panel1.Controls.Add(this.tv11);
@@ -153,6 +152,7 @@ namespace IEA_ErpProject101_Main
             this.spcSolMenuOrta.Panel1.Controls.Add(this.tv5);
             this.spcSolMenuOrta.Panel1.Controls.Add(this.tv4);
             this.spcSolMenuOrta.Panel1.Controls.Add(this.tvUrunIslemleri);
+            this.spcSolMenuOrta.Panel1.Controls.Add(this.tvDepoIslemleri);
             // 
             // spcSolMenuOrta.Panel2
             // 
@@ -164,21 +164,11 @@ namespace IEA_ErpProject101_Main
             this.spcSolMenuOrta.SplitterDistance = 127;
             this.spcSolMenuOrta.TabIndex = 1;
             // 
-            // tvUrunIslemleri
-            // 
-            this.tvUrunIslemleri.BackColor = System.Drawing.Color.LightPink;
-            this.tvUrunIslemleri.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvUrunIslemleri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tvUrunIslemleri.Location = new System.Drawing.Point(0, 0);
-            this.tvUrunIslemleri.Name = "tvUrunIslemleri";
-            this.tvUrunIslemleri.Size = new System.Drawing.Size(196, 123);
-            this.tvUrunIslemleri.TabIndex = 2;
-            this.tvUrunIslemleri.Visible = false;
-            this.tvUrunIslemleri.DoubleClick += new System.EventHandler(this.tvUrunIslemleri_DoubleClick);
-            // 
             // tvDepoIslemleri
             // 
+            this.tvDepoIslemleri.BackColor = System.Drawing.Color.CornflowerBlue;
             this.tvDepoIslemleri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvDepoIslemleri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tvDepoIslemleri.Location = new System.Drawing.Point(0, 0);
             this.tvDepoIslemleri.Name = "tvDepoIslemleri";
             this.tvDepoIslemleri.Size = new System.Drawing.Size(196, 123);
@@ -188,7 +178,9 @@ namespace IEA_ErpProject101_Main
             // 
             // tvBilgiGirisIslemleri
             // 
+            this.tvBilgiGirisIslemleri.BackColor = System.Drawing.Color.LightGreen;
             this.tvBilgiGirisIslemleri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvBilgiGirisIslemleri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tvBilgiGirisIslemleri.Location = new System.Drawing.Point(0, 0);
             this.tvBilgiGirisIslemleri.Name = "tvBilgiGirisIslemleri";
             this.tvBilgiGirisIslemleri.Size = new System.Drawing.Size(196, 123);
@@ -278,13 +270,25 @@ namespace IEA_ErpProject101_Main
             this.tv4.TabIndex = 3;
             this.tv4.Visible = false;
             // 
+            // tvUrunIslemleri
+            // 
+            this.tvUrunIslemleri.BackColor = System.Drawing.Color.LightPink;
+            this.tvUrunIslemleri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvUrunIslemleri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tvUrunIslemleri.Location = new System.Drawing.Point(0, 0);
+            this.tvUrunIslemleri.Name = "tvUrunIslemleri";
+            this.tvUrunIslemleri.Size = new System.Drawing.Size(196, 123);
+            this.tvUrunIslemleri.TabIndex = 2;
+            this.tvUrunIslemleri.Visible = false;
+            this.tvUrunIslemleri.DoubleClick += new System.EventHandler(this.tvUrunIslemleri_DoubleClick);
+            // 
             // btnUrunIslemleri
             // 
             this.btnUrunIslemleri.BackColor = System.Drawing.Color.Orchid;
             this.btnUrunIslemleri.Location = new System.Drawing.Point(132, 3);
             this.btnUrunIslemleri.Name = "btnUrunIslemleri";
             this.btnUrunIslemleri.Size = new System.Drawing.Size(66, 46);
-            this.btnUrunIslemleri.TabIndex = 3;
+            this.btnUrunIslemleri.TabIndex = 1;
             this.btnUrunIslemleri.Text = "Urun İşlemleri";
             this.btnUrunIslemleri.UseVisualStyleBackColor = false;
             this.btnUrunIslemleri.Click += new System.EventHandler(this.btnUrunIslemleri_Click);
@@ -307,7 +311,7 @@ namespace IEA_ErpProject101_Main
             this.btnBilgiGiris.Location = new System.Drawing.Point(1, 3);
             this.btnBilgiGiris.Name = "btnBilgiGiris";
             this.btnBilgiGiris.Size = new System.Drawing.Size(63, 46);
-            this.btnBilgiGiris.TabIndex = 1;
+            this.btnBilgiGiris.TabIndex = 0;
             this.btnBilgiGiris.Text = "Bilgi Giriş İşlemleri";
             this.btnBilgiGiris.UseVisualStyleBackColor = false;
             this.btnBilgiGiris.Click += new System.EventHandler(this.btnBilgiGiris_Click);
@@ -340,7 +344,7 @@ namespace IEA_ErpProject101_Main
             // 
             this.lblBilgiEkrani.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBilgiEkrani.BackColor = System.Drawing.Color.LightPink;
+            this.lblBilgiEkrani.BackColor = System.Drawing.Color.LightSlateGray;
             this.lblBilgiEkrani.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblBilgiEkrani.Location = new System.Drawing.Point(3, 26);
             this.lblBilgiEkrani.Name = "lblBilgiEkrani";

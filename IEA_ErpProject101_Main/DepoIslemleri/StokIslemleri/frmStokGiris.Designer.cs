@@ -29,9 +29,9 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlUst = new System.Windows.Forms.Panel();
             this.btnKapat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,13 +51,14 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlAlt = new System.Windows.Forms.Panel();
+            this.txtTAdet = new System.Windows.Forms.TextBox();
+            this.txtUrnCombo = new System.Windows.Forms.ComboBox();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnKayit = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.Liste = new System.Windows.Forms.DataGridView();
-            this.txtUrnCombo = new System.Windows.Forms.ComboBox();
             this.Sira = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barkod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urunkodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +68,8 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.UTarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SKTarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AlisFiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.pnlUst.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.pnlAlt.SuspendLayout();
@@ -254,6 +257,9 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             // pnlAlt
             // 
             this.pnlAlt.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlAlt.Controls.Add(this.label10);
+            this.pnlAlt.Controls.Add(this.label9);
+            this.pnlAlt.Controls.Add(this.txtTAdet);
             this.pnlAlt.Controls.Add(this.txtUrnCombo);
             this.pnlAlt.Controls.Add(this.btnTemizle);
             this.pnlAlt.Controls.Add(this.btnSil);
@@ -264,6 +270,21 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.pnlAlt.Name = "pnlAlt";
             this.pnlAlt.Size = new System.Drawing.Size(800, 43);
             this.pnlAlt.TabIndex = 2;
+            // 
+            // txtTAdet
+            // 
+            this.txtTAdet.Location = new System.Drawing.Point(151, 20);
+            this.txtTAdet.Name = "txtTAdet";
+            this.txtTAdet.Size = new System.Drawing.Size(100, 20);
+            this.txtTAdet.TabIndex = 6;
+            // 
+            // txtUrnCombo
+            // 
+            this.txtUrnCombo.FormattingEnabled = true;
+            this.txtUrnCombo.Location = new System.Drawing.Point(7, 19);
+            this.txtUrnCombo.Name = "txtUrnCombo";
+            this.txtUrnCombo.Size = new System.Drawing.Size(121, 21);
+            this.txtUrnCombo.TabIndex = 5;
             // 
             // btnTemizle
             // 
@@ -322,14 +343,14 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             // Liste
             // 
             this.Liste.AllowDrop = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Liste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Liste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Liste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Liste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Sira,
@@ -351,21 +372,12 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.Liste.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Liste_CellEndEdit);
             this.Liste.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.Liste_EditingControlShowing);
             // 
-            // txtUrnCombo
-            // 
-            this.txtUrnCombo.FormattingEnabled = true;
-            this.txtUrnCombo.Location = new System.Drawing.Point(12, 6);
-            this.txtUrnCombo.Name = "txtUrnCombo";
-            this.txtUrnCombo.Size = new System.Drawing.Size(121, 21);
-            this.txtUrnCombo.TabIndex = 5;
-            // 
             // Sira
             // 
             this.Sira.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Sira.HeaderText = "Sira";
             this.Sira.Name = "Sira";
             this.Sira.Visible = false;
-            this.Sira.Width = 50;
             // 
             // barkod
             // 
@@ -373,7 +385,6 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.barkod.HeaderText = "Barkod";
             this.barkod.Name = "barkod";
             this.barkod.Visible = false;
-            this.barkod.Width = 66;
             // 
             // urunkodu
             // 
@@ -393,7 +404,7 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.Gadet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Gadet.HeaderText = "Giris Adet";
             this.Gadet.Name = "Gadet";
-            this.Gadet.Width = 77;
+            this.Gadet.Width = 71;
             // 
             // not
             // 
@@ -404,9 +415,9 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             // UTarih
             // 
             this.UTarih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = "-";
-            this.UTarih.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = "-";
+            this.UTarih.DefaultCellStyle = dataGridViewCellStyle5;
             this.UTarih.HeaderText = "UT";
             this.UTarih.Name = "UTarih";
             this.UTarih.Width = 47;
@@ -414,9 +425,9 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             // SKTarih
             // 
             this.SKTarih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = "-";
-            this.SKTarih.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Format = "d";
+            dataGridViewCellStyle6.NullValue = "-";
+            this.SKTarih.DefaultCellStyle = dataGridViewCellStyle6;
             this.SKTarih.HeaderText = "SKT";
             this.SKTarih.Name = "SKTarih";
             this.SKTarih.Width = 53;
@@ -426,7 +437,27 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.AlisFiyat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.AlisFiyat.HeaderText = "Alis Fiyati";
             this.AlisFiyat.Name = "AlisFiyat";
-            this.AlisFiyat.Width = 75;
+            this.AlisFiyat.Width = 69;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.Location = new System.Drawing.Point(12, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Urun Kodu";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Location = new System.Drawing.Point(148, 4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Toplam Adet";
             // 
             // frmStokGiris
             // 
@@ -445,6 +476,7 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.pnlRight.ResumeLayout(false);
             this.pnlRight.PerformLayout();
             this.pnlAlt.ResumeLayout(false);
+            this.pnlAlt.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Liste)).EndInit();
             this.ResumeLayout(false);
 
@@ -487,5 +519,8 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
         private System.Windows.Forms.DataGridViewTextBoxColumn UTarih;
         private System.Windows.Forms.DataGridViewTextBoxColumn SKTarih;
         private System.Windows.Forms.DataGridViewTextBoxColumn AlisFiyat;
+        private System.Windows.Forms.TextBox txtTAdet;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -307,5 +307,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Firma
                 MessageBox.Show(e.Message);
             }
         }
+
     }
 }

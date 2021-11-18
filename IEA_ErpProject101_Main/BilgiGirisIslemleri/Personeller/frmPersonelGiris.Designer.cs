@@ -201,7 +201,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
             // 
             // splitter2
             // 
-            this.splitter2.BackColor = System.Drawing.Color.Red;
+            this.splitter2.BackColor = System.Drawing.Color.IndianRed;
             this.splitter2.Cursor = System.Windows.Forms.Cursors.HSplit;
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter2.Location = new System.Drawing.Point(0, 308);
@@ -507,6 +507,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Personeller
             // pnlOrta
             // 
             this.pnlOrta.AutoSize = true;
+            this.pnlOrta.BackColor = System.Drawing.Color.RosyBrown;
             this.pnlOrta.Controls.Add(this.label9);
             this.pnlOrta.Controls.Add(this.maskedTextBox1);
             this.pnlOrta.Controls.Add(this.txtKayitBul);

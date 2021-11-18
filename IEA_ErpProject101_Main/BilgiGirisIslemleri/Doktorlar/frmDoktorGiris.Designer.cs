@@ -31,7 +31,16 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
         {
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.liste = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiraNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CariKodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CariAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CariTelefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CariMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlOrta = new System.Windows.Forms.Panel();
+            this.txtDUnvan = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtKayitBul = new System.Windows.Forms.TextBox();
             this.txtCariTipi = new System.Windows.Forms.ComboBox();
             this.txtDoktorMail = new System.Windows.Forms.TextBox();
@@ -63,15 +72,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnFormCikis = new System.Windows.Forms.Button();
             this.btnKayit = new System.Windows.Forms.Button();
-            this.txtDUnvan = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SiraNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CariKodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CariAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CariTelefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CariMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.liste)).BeginInit();
             this.pnlOrta.SuspendLayout();
             this.pnlUst.SuspendLayout();
@@ -106,9 +106,57 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             this.liste.TabIndex = 61;
             this.liste.DoubleClick += new System.EventHandler(this.liste_DoubleClick);
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // SiraNo
+            // 
+            this.SiraNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SiraNo.HeaderText = "Sıra No";
+            this.SiraNo.Name = "SiraNo";
+            this.SiraNo.Width = 50;
+            // 
+            // CariKodu
+            // 
+            this.CariKodu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.CariKodu.HeaderText = "Doktor Kodu";
+            this.CariKodu.Name = "CariKodu";
+            this.CariKodu.Width = 85;
+            // 
+            // CariAdi
+            // 
+            this.CariAdi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CariAdi.HeaderText = "Doktor Adı";
+            this.CariAdi.Name = "CariAdi";
+            // 
+            // CariTelefon
+            // 
+            this.CariTelefon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.CariTelefon.HeaderText = "Doktor Telefon";
+            this.CariTelefon.Name = "CariTelefon";
+            this.CariTelefon.Width = 95;
+            // 
+            // Cep
+            // 
+            this.Cep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Cep.HeaderText = "Doktor GSM";
+            this.Cep.Name = "Cep";
+            this.Cep.Width = 84;
+            // 
+            // CariMail
+            // 
+            this.CariMail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.CariMail.HeaderText = "Doktor Mail";
+            this.CariMail.Name = "CariMail";
+            this.CariMail.Width = 79;
+            // 
             // pnlOrta
             // 
             this.pnlOrta.AutoScroll = true;
+            this.pnlOrta.BackColor = System.Drawing.Color.AntiqueWhite;
             this.pnlOrta.Controls.Add(this.txtDUnvan);
             this.pnlOrta.Controls.Add(this.label2);
             this.pnlOrta.Controls.Add(this.txtKayitBul);
@@ -139,6 +187,25 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             this.pnlOrta.Name = "pnlOrta";
             this.pnlOrta.Size = new System.Drawing.Size(858, 343);
             this.pnlOrta.TabIndex = 60;
+            // 
+            // txtDUnvan
+            // 
+            this.txtDUnvan.FormattingEnabled = true;
+            this.txtDUnvan.Location = new System.Drawing.Point(118, 33);
+            this.txtDUnvan.Name = "txtDUnvan";
+            this.txtDUnvan.Size = new System.Drawing.Size(100, 21);
+            this.txtDUnvan.TabIndex = 39;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(12, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 19);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Doktor Unvan:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtKayitBul
             // 
@@ -172,7 +239,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(12, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 19);
@@ -190,7 +258,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(12, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 30);
@@ -200,7 +269,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             // 
             // label5
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(12, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 32);
@@ -210,7 +280,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label6.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(284, 143);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 19);
@@ -228,7 +299,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label8.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(269, 67);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 19);
@@ -246,7 +318,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             // 
             // label11
             // 
-            this.label11.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label11.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(548, 67);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(100, 19);
@@ -264,7 +337,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             // 
             // label12
             // 
-            this.label12.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label12.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(284, 180);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 19);
@@ -281,7 +355,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             // 
             // label16
             // 
-            this.label16.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label16.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label16.ForeColor = System.Drawing.Color.Black;
             this.label16.Location = new System.Drawing.Point(515, 145);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(100, 19);
@@ -291,7 +366,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             // 
             // label15
             // 
-            this.label15.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label15.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(269, 31);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(100, 19);
@@ -301,7 +377,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             // 
             // label14
             // 
-            this.label14.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label14.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(548, 32);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(100, 19);
@@ -311,7 +388,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             // 
             // label13
             // 
-            this.label13.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label13.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(515, 179);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(100, 19);
@@ -430,71 +508,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Doktorlar
             this.btnKayit.TabIndex = 1;
             this.btnKayit.UseVisualStyleBackColor = true;
             this.btnKayit.Click += new System.EventHandler(this.btnKayit_Click);
-            // 
-            // txtDUnvan
-            // 
-            this.txtDUnvan.FormattingEnabled = true;
-            this.txtDUnvan.Location = new System.Drawing.Point(118, 33);
-            this.txtDUnvan.Name = "txtDUnvan";
-            this.txtDUnvan.Size = new System.Drawing.Size(100, 21);
-            this.txtDUnvan.TabIndex = 39;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(12, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 19);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Doktor Unvan:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // SiraNo
-            // 
-            this.SiraNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.SiraNo.HeaderText = "Sıra No";
-            this.SiraNo.Name = "SiraNo";
-            this.SiraNo.Width = 67;
-            // 
-            // CariKodu
-            // 
-            this.CariKodu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.CariKodu.HeaderText = "Doktor Kodu";
-            this.CariKodu.Name = "CariKodu";
-            this.CariKodu.Width = 92;
-            // 
-            // CariAdi
-            // 
-            this.CariAdi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CariAdi.HeaderText = "Doktor Adı";
-            this.CariAdi.Name = "CariAdi";
-            // 
-            // CariTelefon
-            // 
-            this.CariTelefon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.CariTelefon.HeaderText = "Doktor Telefon";
-            this.CariTelefon.Name = "CariTelefon";
-            this.CariTelefon.Width = 103;
-            // 
-            // Cep
-            // 
-            this.Cep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Cep.HeaderText = "Doktor GSM";
-            this.Cep.Name = "Cep";
-            this.Cep.Width = 91;
-            // 
-            // CariMail
-            // 
-            this.CariMail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.CariMail.HeaderText = "Doktor Mail";
-            this.CariMail.Name = "CariMail";
-            this.CariMail.Width = 86;
             // 
             // frmDoktorGiris
             // 

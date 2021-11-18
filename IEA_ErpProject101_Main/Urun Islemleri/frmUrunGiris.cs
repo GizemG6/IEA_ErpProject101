@@ -45,7 +45,7 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
                 liste.Rows[i].Cells[1].Value = sira;
                 liste.Rows[i].Cells[2].Value = k.UrunGenelNo;
                 liste.Rows[i].Cells[3].Value = k.UrunKodu;
-                liste.Rows[i].Cells[3].Value = k.UrunAdi;
+                liste.Rows[i].Cells[4].Value = k.UrunAdi;
                 i++;
                 sira++;
             }
@@ -65,8 +65,9 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
         }
         private void YeniKayit()
         {
-            if (secimId != -1 || txtUrunKodu.Text=="")
+            if (secimId != -1 || txtUrunKodu.Text=="" || txtKullanimAy.Text=="")
             {
+                MessageBox.Show("Urun kodu veya kullanim suresi bos birakilamaz ya da kaydi yapilmis urunler tekrar kaydedilemez");
                 return;
             }
             try
@@ -80,6 +81,7 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
                 urn.SatisFiyat = decimal.Parse(txtAlisF.Text);
                 urn.KutuIcerik = txtKutuIcerik.Text;
                 urn.UrunAciklama = txtUrunAcik.Text;
+                urn.KullanimSuresiAy = (int)txtKullanimAy.Value;
                 urn.SaveDate = DateTime.Now;
                 urn.SaveUserId = 1;
                 urn.isActive = true;
@@ -126,6 +128,7 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
                 txtAlisF.Text = urn.AlisFiyat.ToString();
                 txtSatisF.Text = urn.SatisFiyat.ToString();
                 txtKutuIcerik.Text = urn.KutuIcerik;
+                txtKullanimAy.Text = urn.KullanimSuresiAy.ToString();
             }
             catch(Exception e)
             {
@@ -151,6 +154,7 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
                 urn.SatisFiyat = decimal.Parse(txtAlisF.Text);
                 urn.KutuIcerik = txtKutuIcerik.Text;
                 urn.UrunAciklama = txtUrunAcik.Text;
+                urn.KullanimSuresiAy = (int)txtKullanimAy.Value;
                 urn.UpdateDate = DateTime.Now;
                 urn.UpdateUserId = 1;
                 

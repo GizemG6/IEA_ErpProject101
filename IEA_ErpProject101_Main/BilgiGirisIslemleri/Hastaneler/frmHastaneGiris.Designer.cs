@@ -31,6 +31,11 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
         {
             this.pnlUst = new System.Windows.Forms.Panel();
             this.lblHastaneKodu = new System.Windows.Forms.Label();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnTemizle = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnFormCikis = new System.Windows.Forms.Button();
+            this.btnKayit = new System.Windows.Forms.Button();
             this.pnlAlt = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -72,6 +77,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtVerTcNo = new System.Windows.Forms.MaskedTextBox();
             this.txtHastaneTel = new System.Windows.Forms.MaskedTextBox();
             this.pnlOrta = new System.Windows.Forms.Panel();
+            this.txtKayitBul = new System.Windows.Forms.TextBox();
             this.txtCariTipi = new System.Windows.Forms.ComboBox();
             this.liste = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,12 +88,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.CariMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.YetkiliKisiAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitter2 = new System.Windows.Forms.Splitter();
-            this.txtKayitBul = new System.Windows.Forms.TextBox();
-            this.btnSil = new System.Windows.Forms.Button();
-            this.btnTemizle = new System.Windows.Forms.Button();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.btnFormCikis = new System.Windows.Forms.Button();
-            this.btnKayit = new System.Windows.Forms.Button();
             this.pnlUst.SuspendLayout();
             this.pnlOrta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.liste)).BeginInit();
@@ -107,7 +107,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.pnlUst.Name = "pnlUst";
             this.pnlUst.Size = new System.Drawing.Size(858, 45);
             this.pnlUst.TabIndex = 0;
-            
             // 
             // lblHastaneKodu
             // 
@@ -119,6 +118,60 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.lblHastaneKodu.TabIndex = 5;
             this.lblHastaneKodu.Text = "***";
             this.lblHastaneKodu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnSil
+            // 
+            this.btnSil.Image = global::IEA_ErpProject101_Main.Properties.Resources.Sil24x24;
+            this.btnSil.Location = new System.Drawing.Point(141, 8);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(39, 30);
+            this.btnSil.TabIndex = 3;
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Image = global::IEA_ErpProject101_Main.Properties.Resources.Sil32x32;
+            this.btnTemizle.Location = new System.Drawing.Point(186, 8);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(39, 30);
+            this.btnTemizle.TabIndex = 4;
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.BackgroundImage = global::IEA_ErpProject101_Main.Properties.Resources.Update32x32;
+            this.btnGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuncelle.Location = new System.Drawing.Point(84, 8);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(39, 30);
+            this.btnGuncelle.TabIndex = 2;
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // btnFormCikis
+            // 
+            this.btnFormCikis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFormCikis.BackgroundImage = global::IEA_ErpProject101_Main.Properties.Resources.exit_48;
+            this.btnFormCikis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFormCikis.Location = new System.Drawing.Point(807, 3);
+            this.btnFormCikis.Name = "btnFormCikis";
+            this.btnFormCikis.Size = new System.Drawing.Size(39, 40);
+            this.btnFormCikis.TabIndex = 0;
+            this.btnFormCikis.UseVisualStyleBackColor = true;
+            this.btnFormCikis.Click += new System.EventHandler(this.btnFormCikis_Click);
+            // 
+            // btnKayit
+            // 
+            this.btnKayit.BackgroundImage = global::IEA_ErpProject101_Main.Properties.Resources.Save_icon32x32;
+            this.btnKayit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnKayit.Location = new System.Drawing.Point(27, 8);
+            this.btnKayit.Name = "btnKayit";
+            this.btnKayit.Size = new System.Drawing.Size(39, 30);
+            this.btnKayit.TabIndex = 1;
+            this.btnKayit.UseVisualStyleBackColor = true;
+            this.btnKayit.Click += new System.EventHandler(this.btnKayit_Click);
             // 
             // pnlAlt
             // 
@@ -138,7 +191,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label1.TabIndex = 4;
             this.label1.Text = "Hastane Adı:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-          
             // 
             // label3
             // 
@@ -149,7 +201,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label3.TabIndex = 6;
             this.label3.Text = "Hastane Cari:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            
             // 
             // label4
             // 
@@ -160,7 +211,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label4.TabIndex = 7;
             this.label4.Text = "Adres1:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-           
             // 
             // label5
             // 
@@ -171,7 +221,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label5.TabIndex = 8;
             this.label5.Text = "Adres2:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            
             // 
             // label6
             // 
@@ -182,7 +231,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label6.TabIndex = 9;
             this.label6.Text = "Cari Tipi:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            
             // 
             // label7
             // 
@@ -193,7 +241,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label7.TabIndex = 10;
             this.label7.Text = "Yetkili:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-           
             // 
             // label8
             // 
@@ -204,7 +251,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label8.TabIndex = 11;
             this.label8.Text = "Departman:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            
             // 
             // label9
             // 
@@ -215,7 +261,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label9.TabIndex = 12;
             this.label9.Text = "E-Mail:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            
             // 
             // label10
             // 
@@ -226,7 +271,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label10.TabIndex = 13;
             this.label10.Text = "Telefon:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            
             // 
             // label11
             // 
@@ -237,7 +281,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label11.TabIndex = 14;
             this.label11.Text = "Cep:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            
             // 
             // label12
             // 
@@ -248,7 +291,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label12.TabIndex = 15;
             this.label12.Text = "Vergi No:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-         
             // 
             // txtYet1
             // 
@@ -256,7 +298,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtYet1.Name = "txtYet1";
             this.txtYet1.Size = new System.Drawing.Size(100, 20);
             this.txtYet1.TabIndex = 10;
-            
             // 
             // txtYet2
             // 
@@ -264,7 +305,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtYet2.Name = "txtYet2";
             this.txtYet2.Size = new System.Drawing.Size(100, 20);
             this.txtYet2.TabIndex = 15;
-            
             // 
             // txtYet3
             // 
@@ -272,7 +312,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtYet3.Name = "txtYet3";
             this.txtYet3.Size = new System.Drawing.Size(100, 20);
             this.txtYet3.TabIndex = 20;
-           
             // 
             // txtEmail1
             // 
@@ -287,7 +326,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtEmail2.Name = "txtEmail2";
             this.txtEmail2.Size = new System.Drawing.Size(116, 20);
             this.txtEmail2.TabIndex = 19;
-            
             // 
             // txtEmail3
             // 
@@ -295,7 +333,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtEmail3.Name = "txtEmail3";
             this.txtEmail3.Size = new System.Drawing.Size(116, 20);
             this.txtEmail3.TabIndex = 24;
-            
             // 
             // txtHastaneAdi
             // 
@@ -303,7 +340,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtHastaneAdi.Name = "txtHastaneAdi";
             this.txtHastaneAdi.Size = new System.Drawing.Size(144, 20);
             this.txtHastaneAdi.TabIndex = 0;
-           
             // 
             // txtHastaneCari
             // 
@@ -311,7 +347,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtHastaneCari.Name = "txtHastaneCari";
             this.txtHastaneCari.Size = new System.Drawing.Size(144, 20);
             this.txtHastaneCari.TabIndex = 1;
-            
             // 
             // txtAdres1
             // 
@@ -320,7 +355,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtAdres1.Name = "txtAdres1";
             this.txtAdres1.Size = new System.Drawing.Size(144, 76);
             this.txtAdres1.TabIndex = 2;
-            
             // 
             // txtAdres2
             // 
@@ -329,7 +363,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtAdres2.Name = "txtAdres2";
             this.txtAdres2.Size = new System.Drawing.Size(144, 70);
             this.txtAdres2.TabIndex = 3;
-           
             // 
             // label13
             // 
@@ -340,7 +373,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label13.TabIndex = 34;
             this.label13.Text = "Vergi Dairesi:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            
             // 
             // label14
             // 
@@ -351,7 +383,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label14.TabIndex = 35;
             this.label14.Text = "Hastane Tel:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            
             // 
             // label15
             // 
@@ -362,7 +393,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label15.TabIndex = 36;
             this.label15.Text = "Hastane Mail:";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            
             // 
             // label16
             // 
@@ -373,7 +403,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.label16.TabIndex = 37;
             this.label16.Text = "Sehir:";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-           
             // 
             // txtHastaneMail
             // 
@@ -381,7 +410,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtHastaneMail.Name = "txtHastaneMail";
             this.txtHastaneMail.Size = new System.Drawing.Size(167, 20);
             this.txtHastaneMail.TabIndex = 8;
-           
             // 
             // txtVergiDairesi
             // 
@@ -389,7 +417,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtVergiDairesi.Name = "txtVergiDairesi";
             this.txtVergiDairesi.Size = new System.Drawing.Size(100, 20);
             this.txtVergiDairesi.TabIndex = 7;
-            
             // 
             // txtDepartman1
             // 
@@ -398,7 +425,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtDepartman1.Name = "txtDepartman1";
             this.txtDepartman1.Size = new System.Drawing.Size(121, 21);
             this.txtDepartman1.TabIndex = 11;
-        
             // 
             // txtDepartman2
             // 
@@ -407,7 +433,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtDepartman2.Name = "txtDepartman2";
             this.txtDepartman2.Size = new System.Drawing.Size(121, 21);
             this.txtDepartman2.TabIndex = 16;
-            
             // 
             // txtDepartman3
             // 
@@ -416,7 +441,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtDepartman3.Name = "txtDepartman3";
             this.txtDepartman3.Size = new System.Drawing.Size(121, 21);
             this.txtDepartman3.TabIndex = 21;
-           
             // 
             // txtSehir
             // 
@@ -425,7 +449,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtSehir.Name = "txtSehir";
             this.txtSehir.Size = new System.Drawing.Size(100, 21);
             this.txtSehir.TabIndex = 5;
-            
             // 
             // txtYcep1
             // 
@@ -434,7 +457,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtYcep1.Name = "txtYcep1";
             this.txtYcep1.Size = new System.Drawing.Size(100, 20);
             this.txtYcep1.TabIndex = 13;
-            
             // 
             // txtYcep2
             // 
@@ -443,7 +465,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtYcep2.Name = "txtYcep2";
             this.txtYcep2.Size = new System.Drawing.Size(100, 20);
             this.txtYcep2.TabIndex = 18;
-            
             // 
             // txtYcep3
             // 
@@ -452,7 +473,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtYcep3.Name = "txtYcep3";
             this.txtYcep3.Size = new System.Drawing.Size(100, 20);
             this.txtYcep3.TabIndex = 23;
-            
             // 
             // txtYTel1
             // 
@@ -461,7 +481,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtYTel1.Name = "txtYTel1";
             this.txtYTel1.Size = new System.Drawing.Size(100, 20);
             this.txtYTel1.TabIndex = 12;
-           
             // 
             // txtYTel2
             // 
@@ -470,7 +489,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtYTel2.Name = "txtYTel2";
             this.txtYTel2.Size = new System.Drawing.Size(100, 20);
             this.txtYTel2.TabIndex = 17;
-            
             // 
             // txtYTel3
             // 
@@ -479,7 +497,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtYTel3.Name = "txtYTel3";
             this.txtYTel3.Size = new System.Drawing.Size(100, 20);
             this.txtYTel3.TabIndex = 22;
-           
             // 
             // txtVerTcNo
             // 
@@ -488,7 +505,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtVerTcNo.Name = "txtVerTcNo";
             this.txtVerTcNo.Size = new System.Drawing.Size(100, 20);
             this.txtVerTcNo.TabIndex = 6;
-            
             // 
             // txtHastaneTel
             // 
@@ -497,11 +513,11 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtHastaneTel.Name = "txtHastaneTel";
             this.txtHastaneTel.Size = new System.Drawing.Size(100, 20);
             this.txtHastaneTel.TabIndex = 9;
-          
             // 
             // pnlOrta
             // 
             this.pnlOrta.AutoScroll = true;
+            this.pnlOrta.BackColor = System.Drawing.Color.MediumAquamarine;
             this.pnlOrta.Controls.Add(this.txtKayitBul);
             this.pnlOrta.Controls.Add(this.txtCariTipi);
             this.pnlOrta.Controls.Add(this.txtHastaneMail);
@@ -549,6 +565,13 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.pnlOrta.Size = new System.Drawing.Size(858, 343);
             this.pnlOrta.TabIndex = 55;
             // 
+            // txtKayitBul
+            // 
+            this.txtKayitBul.Location = new System.Drawing.Point(27, 6);
+            this.txtKayitBul.Name = "txtKayitBul";
+            this.txtKayitBul.Size = new System.Drawing.Size(177, 20);
+            this.txtKayitBul.TabIndex = 38;
+            // 
             // txtCariTipi
             // 
             this.txtCariTipi.FormattingEnabled = true;
@@ -556,7 +579,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.txtCariTipi.Name = "txtCariTipi";
             this.txtCariTipi.Size = new System.Drawing.Size(100, 21);
             this.txtCariTipi.TabIndex = 4;
-            
             // 
             // liste
             // 
@@ -624,7 +646,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // splitter2
             // 
-            this.splitter2.BackColor = System.Drawing.Color.Red;
+            this.splitter2.BackColor = System.Drawing.Color.Firebrick;
             this.splitter2.Cursor = System.Windows.Forms.Cursors.HSplit;
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.splitter2.Location = new System.Drawing.Point(0, 303);
@@ -632,69 +654,6 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             this.splitter2.Size = new System.Drawing.Size(858, 14);
             this.splitter2.TabIndex = 57;
             this.splitter2.TabStop = false;
-         
-            // 
-            // txtKayitBul
-            // 
-            this.txtKayitBul.Location = new System.Drawing.Point(27, 6);
-            this.txtKayitBul.Name = "txtKayitBul";
-            this.txtKayitBul.Size = new System.Drawing.Size(177, 20);
-            this.txtKayitBul.TabIndex = 38;
-            
-            // 
-            // btnSil
-            // 
-            this.btnSil.Image = global::IEA_ErpProject101_Main.Properties.Resources.Sil24x24;
-            this.btnSil.Location = new System.Drawing.Point(141, 8);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(39, 30);
-            this.btnSil.TabIndex = 3;
-            this.btnSil.UseVisualStyleBackColor = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnTemizle
-            // 
-            this.btnTemizle.Image = global::IEA_ErpProject101_Main.Properties.Resources.Sil32x32;
-            this.btnTemizle.Location = new System.Drawing.Point(186, 8);
-            this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(39, 30);
-            this.btnTemizle.TabIndex = 4;
-            this.btnTemizle.UseVisualStyleBackColor = true;
-            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.BackgroundImage = global::IEA_ErpProject101_Main.Properties.Resources.Update32x32;
-            this.btnGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuncelle.Location = new System.Drawing.Point(84, 8);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(39, 30);
-            this.btnGuncelle.TabIndex = 2;
-            this.btnGuncelle.UseVisualStyleBackColor = true;
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
-            // btnFormCikis
-            // 
-            this.btnFormCikis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFormCikis.BackgroundImage = global::IEA_ErpProject101_Main.Properties.Resources.exit_48;
-            this.btnFormCikis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFormCikis.Location = new System.Drawing.Point(807, 3);
-            this.btnFormCikis.Name = "btnFormCikis";
-            this.btnFormCikis.Size = new System.Drawing.Size(39, 40);
-            this.btnFormCikis.TabIndex = 0;
-            this.btnFormCikis.UseVisualStyleBackColor = true;
-            this.btnFormCikis.Click += new System.EventHandler(this.btnFormCikis_Click);
-            // 
-            // btnKayit
-            // 
-            this.btnKayit.BackgroundImage = global::IEA_ErpProject101_Main.Properties.Resources.Save_icon32x32;
-            this.btnKayit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnKayit.Location = new System.Drawing.Point(27, 8);
-            this.btnKayit.Name = "btnKayit";
-            this.btnKayit.Size = new System.Drawing.Size(39, 30);
-            this.btnKayit.TabIndex = 1;
-            this.btnKayit.UseVisualStyleBackColor = true;
-            this.btnKayit.Click += new System.EventHandler(this.btnKayit_Click);
             // 
             // frmHastaneGiris
             // 

@@ -125,6 +125,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri
             // 
             // liste
             // 
+            this.liste.BackgroundColor = System.Drawing.Color.MediumAquamarine;
             this.liste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.liste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,

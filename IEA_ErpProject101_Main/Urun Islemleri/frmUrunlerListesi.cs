@@ -41,7 +41,7 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
                 liste.Rows[i].Cells[1].Value = sira;
                 liste.Rows[i].Cells[2].Value = k.UrunGenelNo;
                 liste.Rows[i].Cells[3].Value = k.UrunKodu;
-                liste.Rows[i].Cells[3].Value = k.UrunAdi;
+                liste.Rows[i].Cells[4].Value = k.UrunAdi;
                 i++;
                 sira++;
             }
