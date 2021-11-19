@@ -61,9 +61,9 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             this.label18 = new System.Windows.Forms.Label();
             this.txtSatisF = new System.Windows.Forms.TextBox();
             this.pnlOrta = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtKullanimAy = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.liste)).BeginInit();
             this.pnlUst.SuspendLayout();
             this.pnlOrta.SuspendLayout();
@@ -98,7 +98,8 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.Bisque;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(348, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 19);
@@ -108,7 +109,8 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.Color.Bisque;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(2, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 19);
@@ -118,7 +120,8 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             // 
             // label5
             // 
-            this.label5.BackColor = System.Drawing.Color.Bisque;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(348, 75);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 19);
@@ -128,7 +131,8 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.Bisque;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(3, 39);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 19);
@@ -300,7 +304,8 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.Bisque;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(3, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 19);
@@ -310,7 +315,8 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.Color.Bisque;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(3, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 19);
@@ -327,7 +333,8 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             // 
             // label17
             // 
-            this.label17.BackColor = System.Drawing.Color.Bisque;
+            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label17.Location = new System.Drawing.Point(2, 90);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(100, 19);
@@ -344,7 +351,8 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             // 
             // label18
             // 
-            this.label18.BackColor = System.Drawing.Color.Bisque;
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label18.Location = new System.Drawing.Point(348, 40);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(100, 19);
@@ -382,30 +390,11 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             this.pnlOrta.Controls.Add(this.txtUTedarikciId);
             this.pnlOrta.Controls.Add(this.txtUrunGNo);
             this.pnlOrta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOrta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pnlOrta.Location = new System.Drawing.Point(0, 45);
             this.pnlOrta.Name = "pnlOrta";
             this.pnlOrta.Size = new System.Drawing.Size(800, 231);
             this.pnlOrta.TabIndex = 113;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Bisque;
-            this.label7.Location = new System.Drawing.Point(348, 161);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 19);
-            this.label7.TabIndex = 114;
-            this.label7.Text = "Kullanim Süresi:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.Bisque;
-            this.label8.Location = new System.Drawing.Point(454, 184);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 19);
-            this.label8.TabIndex = 115;
-            this.label8.Text = "Giris ay olarak yapilacak";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtKullanimAy
             // 
@@ -414,10 +403,33 @@ namespace IEA_ErpProject101_Main.Urun_Islemleri
             this.txtKullanimAy.Size = new System.Drawing.Size(144, 20);
             this.txtKullanimAy.TabIndex = 116;
             // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label8.Location = new System.Drawing.Point(454, 184);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(144, 19);
+            this.label8.TabIndex = 115;
+            this.label8.Text = "Giris ay olarak yapilacak";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label7.Location = new System.Drawing.Point(348, 161);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 19);
+            this.label7.TabIndex = 114;
+            this.label7.Text = "Kullanim Süresi:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmUrunGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlOrta);
             this.Controls.Add(this.splitter2);

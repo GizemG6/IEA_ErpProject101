@@ -31,12 +31,16 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             int i = 0, sira = 1;
             var lst = (from s in db.tblStokGirisUst where s.isActive==true select s).ToList();
 
+            var lst1 = (from s in db.vwStokGiris
+                        where s.isActive == true
+                        select s).ToList().Distinct();
+
             foreach (var k in lst)
             {
                 Liste.Rows.Add();
                 Liste.Rows[i].Cells[0].Value = k.Id;
                 Liste.Rows[i].Cells[1].Value = k.GenelNo;
-                Liste.Rows[i].Cells[2].Value = k.tblCariler.CariAdi;
+                Liste.Rows[i].Cells[2].Value = k.tblCariler.CariAdi;//k.CariAdi;
                 Liste.Rows[i].Cells[3].Value = k.FaturaNo;
                 Liste.Rows[i].Cells[4].Value = k.FaturaTarih;
                 Liste.Rows[i].Cells[5].Value = k.GirisTipi;
@@ -69,6 +73,11 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             //    frm1.Ac(secimId);
             //    Close();
             //}
+        }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

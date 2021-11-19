@@ -65,6 +65,7 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.btnKapat.TabIndex = 4;
             this.btnKapat.Text = "Form Cikis";
             this.btnKapat.UseVisualStyleBackColor = true;
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // label1
             // 

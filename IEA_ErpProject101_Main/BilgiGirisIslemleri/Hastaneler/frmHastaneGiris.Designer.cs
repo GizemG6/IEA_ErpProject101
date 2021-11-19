@@ -184,7 +184,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label1.Location = new System.Drawing.Point(12, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 19);
@@ -194,7 +194,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label3.Location = new System.Drawing.Point(12, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 19);
@@ -204,7 +204,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label4.Location = new System.Drawing.Point(12, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 19);
@@ -214,7 +214,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label5
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label5.Location = new System.Drawing.Point(12, 176);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 19);
@@ -224,8 +224,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(281, 5);
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label6.Location = new System.Drawing.Point(305, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 19);
             this.label6.TabIndex = 9;
@@ -234,8 +234,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label7
             // 
-            this.label7.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label7.Location = new System.Drawing.Point(281, 79);
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label7.Location = new System.Drawing.Point(281, 140);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 19);
             this.label7.TabIndex = 10;
@@ -244,8 +244,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label8.Location = new System.Drawing.Point(396, 79);
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label8.Location = new System.Drawing.Point(396, 140);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 19);
             this.label8.TabIndex = 11;
@@ -254,8 +254,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label9
             // 
-            this.label9.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label9.Location = new System.Drawing.Point(727, 79);
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label9.Location = new System.Drawing.Point(727, 140);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 19);
             this.label9.TabIndex = 12;
@@ -264,8 +264,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label10
             // 
-            this.label10.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label10.Location = new System.Drawing.Point(515, 79);
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label10.Location = new System.Drawing.Point(515, 140);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 19);
             this.label10.TabIndex = 13;
@@ -274,8 +274,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label11
             // 
-            this.label11.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label11.Location = new System.Drawing.Point(621, 79);
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label11.Location = new System.Drawing.Point(621, 140);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(100, 19);
             this.label11.TabIndex = 14;
@@ -284,8 +284,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label12
             // 
-            this.label12.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label12.Location = new System.Drawing.Point(281, 24);
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label12.Location = new System.Drawing.Point(305, 57);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 19);
             this.label12.TabIndex = 15;
@@ -294,42 +294,42 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // txtYet1
             // 
-            this.txtYet1.Location = new System.Drawing.Point(284, 101);
+            this.txtYet1.Location = new System.Drawing.Point(284, 162);
             this.txtYet1.Name = "txtYet1";
             this.txtYet1.Size = new System.Drawing.Size(100, 20);
             this.txtYet1.TabIndex = 10;
             // 
             // txtYet2
             // 
-            this.txtYet2.Location = new System.Drawing.Point(284, 127);
+            this.txtYet2.Location = new System.Drawing.Point(284, 188);
             this.txtYet2.Name = "txtYet2";
             this.txtYet2.Size = new System.Drawing.Size(100, 20);
             this.txtYet2.TabIndex = 15;
             // 
             // txtYet3
             // 
-            this.txtYet3.Location = new System.Drawing.Point(284, 153);
+            this.txtYet3.Location = new System.Drawing.Point(284, 214);
             this.txtYet3.Name = "txtYet3";
             this.txtYet3.Size = new System.Drawing.Size(100, 20);
             this.txtYet3.TabIndex = 20;
             // 
             // txtEmail1
             // 
-            this.txtEmail1.Location = new System.Drawing.Point(730, 100);
+            this.txtEmail1.Location = new System.Drawing.Point(730, 161);
             this.txtEmail1.Name = "txtEmail1";
             this.txtEmail1.Size = new System.Drawing.Size(116, 20);
             this.txtEmail1.TabIndex = 14;
             // 
             // txtEmail2
             // 
-            this.txtEmail2.Location = new System.Drawing.Point(730, 126);
+            this.txtEmail2.Location = new System.Drawing.Point(730, 187);
             this.txtEmail2.Name = "txtEmail2";
             this.txtEmail2.Size = new System.Drawing.Size(116, 20);
             this.txtEmail2.TabIndex = 19;
             // 
             // txtEmail3
             // 
-            this.txtEmail3.Location = new System.Drawing.Point(730, 154);
+            this.txtEmail3.Location = new System.Drawing.Point(730, 215);
             this.txtEmail3.Name = "txtEmail3";
             this.txtEmail3.Size = new System.Drawing.Size(116, 20);
             this.txtEmail3.TabIndex = 24;
@@ -366,8 +366,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label13
             // 
-            this.label13.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label13.Location = new System.Drawing.Point(500, 24);
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label13.Location = new System.Drawing.Point(524, 57);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(100, 19);
             this.label13.TabIndex = 34;
@@ -376,8 +376,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label14
             // 
-            this.label14.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label14.Location = new System.Drawing.Point(560, 50);
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label14.Location = new System.Drawing.Point(581, 100);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(100, 19);
             this.label14.TabIndex = 35;
@@ -386,8 +386,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label15
             // 
-            this.label15.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label15.Location = new System.Drawing.Point(284, 50);
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label15.Location = new System.Drawing.Point(305, 100);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(100, 19);
             this.label15.TabIndex = 36;
@@ -396,8 +396,8 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // label16
             // 
-            this.label16.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label16.Location = new System.Drawing.Point(500, 4);
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label16.Location = new System.Drawing.Point(524, 37);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(100, 19);
             this.label16.TabIndex = 37;
@@ -406,14 +406,14 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // txtHastaneMail
             // 
-            this.txtHastaneMail.Location = new System.Drawing.Point(387, 53);
+            this.txtHastaneMail.Location = new System.Drawing.Point(408, 103);
             this.txtHastaneMail.Name = "txtHastaneMail";
             this.txtHastaneMail.Size = new System.Drawing.Size(167, 20);
             this.txtHastaneMail.TabIndex = 8;
             // 
             // txtVergiDairesi
             // 
-            this.txtVergiDairesi.Location = new System.Drawing.Point(606, 27);
+            this.txtVergiDairesi.Location = new System.Drawing.Point(630, 60);
             this.txtVergiDairesi.Name = "txtVergiDairesi";
             this.txtVergiDairesi.Size = new System.Drawing.Size(100, 20);
             this.txtVergiDairesi.TabIndex = 7;
@@ -421,7 +421,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // txtDepartman1
             // 
             this.txtDepartman1.FormattingEnabled = true;
-            this.txtDepartman1.Location = new System.Drawing.Point(390, 100);
+            this.txtDepartman1.Location = new System.Drawing.Point(390, 161);
             this.txtDepartman1.Name = "txtDepartman1";
             this.txtDepartman1.Size = new System.Drawing.Size(121, 21);
             this.txtDepartman1.TabIndex = 11;
@@ -429,7 +429,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // txtDepartman2
             // 
             this.txtDepartman2.FormattingEnabled = true;
-            this.txtDepartman2.Location = new System.Drawing.Point(390, 126);
+            this.txtDepartman2.Location = new System.Drawing.Point(390, 187);
             this.txtDepartman2.Name = "txtDepartman2";
             this.txtDepartman2.Size = new System.Drawing.Size(121, 21);
             this.txtDepartman2.TabIndex = 16;
@@ -437,7 +437,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // txtDepartman3
             // 
             this.txtDepartman3.FormattingEnabled = true;
-            this.txtDepartman3.Location = new System.Drawing.Point(390, 153);
+            this.txtDepartman3.Location = new System.Drawing.Point(390, 214);
             this.txtDepartman3.Name = "txtDepartman3";
             this.txtDepartman3.Size = new System.Drawing.Size(121, 21);
             this.txtDepartman3.TabIndex = 21;
@@ -445,14 +445,14 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // txtSehir
             // 
             this.txtSehir.FormattingEnabled = true;
-            this.txtSehir.Location = new System.Drawing.Point(606, 5);
+            this.txtSehir.Location = new System.Drawing.Point(630, 38);
             this.txtSehir.Name = "txtSehir";
             this.txtSehir.Size = new System.Drawing.Size(100, 21);
             this.txtSehir.TabIndex = 5;
             // 
             // txtYcep1
             // 
-            this.txtYcep1.Location = new System.Drawing.Point(624, 100);
+            this.txtYcep1.Location = new System.Drawing.Point(624, 161);
             this.txtYcep1.Mask = "(999) 000-0000";
             this.txtYcep1.Name = "txtYcep1";
             this.txtYcep1.Size = new System.Drawing.Size(100, 20);
@@ -460,7 +460,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // txtYcep2
             // 
-            this.txtYcep2.Location = new System.Drawing.Point(624, 127);
+            this.txtYcep2.Location = new System.Drawing.Point(624, 188);
             this.txtYcep2.Mask = "(999) 000-0000";
             this.txtYcep2.Name = "txtYcep2";
             this.txtYcep2.Size = new System.Drawing.Size(100, 20);
@@ -468,7 +468,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // txtYcep3
             // 
-            this.txtYcep3.Location = new System.Drawing.Point(624, 154);
+            this.txtYcep3.Location = new System.Drawing.Point(624, 215);
             this.txtYcep3.Mask = "(999) 000-0000";
             this.txtYcep3.Name = "txtYcep3";
             this.txtYcep3.Size = new System.Drawing.Size(100, 20);
@@ -476,7 +476,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // txtYTel1
             // 
-            this.txtYTel1.Location = new System.Drawing.Point(518, 101);
+            this.txtYTel1.Location = new System.Drawing.Point(518, 162);
             this.txtYTel1.Mask = "(999) 000-0000";
             this.txtYTel1.Name = "txtYTel1";
             this.txtYTel1.Size = new System.Drawing.Size(100, 20);
@@ -484,7 +484,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // txtYTel2
             // 
-            this.txtYTel2.Location = new System.Drawing.Point(518, 127);
+            this.txtYTel2.Location = new System.Drawing.Point(518, 188);
             this.txtYTel2.Mask = "(999) 000-0000";
             this.txtYTel2.Name = "txtYTel2";
             this.txtYTel2.Size = new System.Drawing.Size(100, 20);
@@ -492,7 +492,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // txtYTel3
             // 
-            this.txtYTel3.Location = new System.Drawing.Point(517, 154);
+            this.txtYTel3.Location = new System.Drawing.Point(517, 215);
             this.txtYTel3.Mask = "(999) 000-0000";
             this.txtYTel3.Name = "txtYTel3";
             this.txtYTel3.Size = new System.Drawing.Size(100, 20);
@@ -500,7 +500,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // txtVerTcNo
             // 
-            this.txtVerTcNo.Location = new System.Drawing.Point(387, 27);
+            this.txtVerTcNo.Location = new System.Drawing.Point(411, 60);
             this.txtVerTcNo.Mask = "00000000000";
             this.txtVerTcNo.Name = "txtVerTcNo";
             this.txtVerTcNo.Size = new System.Drawing.Size(100, 20);
@@ -508,7 +508,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             // txtHastaneTel
             // 
-            this.txtHastaneTel.Location = new System.Drawing.Point(666, 50);
+            this.txtHastaneTel.Location = new System.Drawing.Point(687, 100);
             this.txtHastaneTel.Mask = "(999) 000-0000";
             this.txtHastaneTel.Name = "txtHastaneTel";
             this.txtHastaneTel.Size = new System.Drawing.Size(100, 20);
@@ -517,7 +517,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // pnlOrta
             // 
             this.pnlOrta.AutoScroll = true;
-            this.pnlOrta.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.pnlOrta.BackColor = System.Drawing.Color.SkyBlue;
             this.pnlOrta.Controls.Add(this.txtKayitBul);
             this.pnlOrta.Controls.Add(this.txtCariTipi);
             this.pnlOrta.Controls.Add(this.txtHastaneMail);
@@ -575,7 +575,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // txtCariTipi
             // 
             this.txtCariTipi.FormattingEnabled = true;
-            this.txtCariTipi.Location = new System.Drawing.Point(387, 5);
+            this.txtCariTipi.Location = new System.Drawing.Point(411, 38);
             this.txtCariTipi.Name = "txtCariTipi";
             this.txtCariTipi.Size = new System.Drawing.Size(100, 21);
             this.txtCariTipi.TabIndex = 4;
@@ -659,6 +659,7 @@ namespace IEA_ErpProject101_Main.BilgiGirisIslemleri.Hastaneler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(858, 414);
             this.Controls.Add(this.splitter2);
             this.Controls.Add(this.liste);

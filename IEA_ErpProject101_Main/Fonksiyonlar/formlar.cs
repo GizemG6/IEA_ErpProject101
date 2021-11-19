@@ -88,5 +88,11 @@ namespace IEA_ErpProject101_Main.Fonksiyonlar
             }
             return Home.Aktarma;
         }
+        public void StokGuncelleme()
+        {
+            frmStokGuncelleme gnc = new frmStokGuncelleme();
+            gnc.ShowDialog();
+        }
+    
     }
 }
