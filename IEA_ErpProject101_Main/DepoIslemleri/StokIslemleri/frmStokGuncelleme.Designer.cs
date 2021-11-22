@@ -29,7 +29,6 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtUrunKodu = new System.Windows.Forms.TextBox();
             this.txtLot = new System.Windows.Forms.TextBox();
             this.txtBarkod = new System.Windows.Forms.TextBox();
             this.txtAdet = new System.Windows.Forms.TextBox();
@@ -39,19 +38,22 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtGenelNo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtUT = new System.Windows.Forms.DateTimePicker();
             this.txtSKT = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblGenelNo = new System.Windows.Forms.Label();
+            this.lblUrunKodu = new System.Windows.Forms.Label();
+            this.lblLot = new System.Windows.Forms.Label();
+            this.lblBarkod = new System.Windows.Forms.Label();
+            this.lblAdet = new System.Windows.Forms.Label();
+            this.lblAlisFiyat = new System.Windows.Forms.Label();
+            this.lblUT = new System.Windows.Forms.Label();
+            this.lblSKT = new System.Windows.Forms.Label();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.txtUrunKodu = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // txtUrunKodu
-            // 
-            this.txtUrunKodu.Location = new System.Drawing.Point(24, 93);
-            this.txtUrunKodu.Name = "txtUrunKodu";
-            this.txtUrunKodu.Size = new System.Drawing.Size(100, 20);
-            this.txtUrunKodu.TabIndex = 0;
             // 
             // txtLot
             // 
@@ -59,6 +61,7 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.txtLot.Name = "txtLot";
             this.txtLot.Size = new System.Drawing.Size(100, 20);
             this.txtLot.TabIndex = 1;
+            this.txtLot.TextChanged += new System.EventHandler(this.txtLot_TextChanged);
             // 
             // txtBarkod
             // 
@@ -83,7 +86,9 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             // 
             // label6
             // 
+            this.label6.BackColor = System.Drawing.Color.PaleTurquoise;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(21, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 23);
@@ -92,7 +97,9 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(137, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 23);
@@ -101,7 +108,9 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             // 
             // label2
             // 
+            this.label2.BackColor = System.Drawing.Color.PaleTurquoise;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(253, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 23);
@@ -110,7 +119,9 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             // 
             // label3
             // 
+            this.label3.BackColor = System.Drawing.Color.PaleTurquoise;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(370, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 23);
@@ -119,23 +130,20 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             // 
             // label4
             // 
+            this.label4.BackColor = System.Drawing.Color.PaleTurquoise;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(486, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 23);
             this.label4.TabIndex = 13;
             this.label4.Text = "Alis Fiyat";
             // 
-            // txtGenelNo
-            // 
-            this.txtGenelNo.Location = new System.Drawing.Point(24, 21);
-            this.txtGenelNo.Name = "txtGenelNo";
-            this.txtGenelNo.Size = new System.Drawing.Size(100, 20);
-            this.txtGenelNo.TabIndex = 14;
-            // 
             // label5
             // 
+            this.label5.BackColor = System.Drawing.Color.PaleTurquoise;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(350, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 23);
@@ -144,7 +152,9 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             // 
             // label7
             // 
+            this.label7.BackColor = System.Drawing.Color.PaleTurquoise;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label7.Location = new System.Drawing.Point(137, 126);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 23);
@@ -157,6 +167,7 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.txtUT.Name = "txtUT";
             this.txtUT.Size = new System.Drawing.Size(183, 20);
             this.txtUT.TabIndex = 17;
+            this.txtUT.ValueChanged += new System.EventHandler(this.txtUT_ValueChanged);
             // 
             // txtSKT
             // 
@@ -165,16 +176,138 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.txtSKT.Size = new System.Drawing.Size(200, 20);
             this.txtSKT.TabIndex = 18;
             // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label8.Location = new System.Drawing.Point(21, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 23);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Genel No";
+            // 
+            // lblGenelNo
+            // 
+            this.lblGenelNo.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.lblGenelNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblGenelNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblGenelNo.Location = new System.Drawing.Point(109, 9);
+            this.lblGenelNo.Name = "lblGenelNo";
+            this.lblGenelNo.Size = new System.Drawing.Size(103, 23);
+            this.lblGenelNo.TabIndex = 20;
+            // 
+            // lblUrunKodu
+            // 
+            this.lblUrunKodu.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.lblUrunKodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUrunKodu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblUrunKodu.Location = new System.Drawing.Point(21, 44);
+            this.lblUrunKodu.Name = "lblUrunKodu";
+            this.lblUrunKodu.Size = new System.Drawing.Size(103, 23);
+            this.lblUrunKodu.TabIndex = 21;
+            // 
+            // lblLot
+            // 
+            this.lblLot.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.lblLot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblLot.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblLot.Location = new System.Drawing.Point(137, 44);
+            this.lblLot.Name = "lblLot";
+            this.lblLot.Size = new System.Drawing.Size(103, 23);
+            this.lblLot.TabIndex = 22;
+            // 
+            // lblBarkod
+            // 
+            this.lblBarkod.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.lblBarkod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBarkod.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblBarkod.Location = new System.Drawing.Point(253, 44);
+            this.lblBarkod.Name = "lblBarkod";
+            this.lblBarkod.Size = new System.Drawing.Size(103, 23);
+            this.lblBarkod.TabIndex = 23;
+            // 
+            // lblAdet
+            // 
+            this.lblAdet.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.lblAdet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAdet.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblAdet.Location = new System.Drawing.Point(370, 44);
+            this.lblAdet.Name = "lblAdet";
+            this.lblAdet.Size = new System.Drawing.Size(103, 23);
+            this.lblAdet.TabIndex = 24;
+            // 
+            // lblAlisFiyat
+            // 
+            this.lblAlisFiyat.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.lblAlisFiyat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAlisFiyat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblAlisFiyat.Location = new System.Drawing.Point(486, 44);
+            this.lblAlisFiyat.Name = "lblAlisFiyat";
+            this.lblAlisFiyat.Size = new System.Drawing.Size(103, 23);
+            this.lblAlisFiyat.TabIndex = 25;
+            // 
+            // lblUT
+            // 
+            this.lblUT.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.lblUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblUT.Location = new System.Drawing.Point(182, 126);
+            this.lblUT.Name = "lblUT";
+            this.lblUT.Size = new System.Drawing.Size(103, 23);
+            this.lblUT.TabIndex = 26;
+            // 
+            // lblSKT
+            // 
+            this.lblSKT.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.lblSKT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSKT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblSKT.Location = new System.Drawing.Point(393, 126);
+            this.lblSKT.Name = "lblSKT";
+            this.lblSKT.Size = new System.Drawing.Size(103, 23);
+            this.lblSKT.TabIndex = 27;
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGuncelle.Location = new System.Drawing.Point(548, 126);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(82, 31);
+            this.btnGuncelle.TabIndex = 28;
+            this.btnGuncelle.Text = "Guncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // txtUrunKodu
+            // 
+            this.txtUrunKodu.FormattingEnabled = true;
+            this.txtUrunKodu.Location = new System.Drawing.Point(12, 93);
+            this.txtUrunKodu.Name = "txtUrunKodu";
+            this.txtUrunKodu.Size = new System.Drawing.Size(112, 21);
+            this.txtUrunKodu.TabIndex = 29;
+            this.txtUrunKodu.SelectedIndexChanged += new System.EventHandler(this.txtUrunKodu_SelectedIndexChanged);
+            // 
             // frmStokGuncelleme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSalmon;
             this.ClientSize = new System.Drawing.Size(663, 207);
+            this.Controls.Add(this.txtUrunKodu);
+            this.Controls.Add(this.btnGuncelle);
+            this.Controls.Add(this.lblSKT);
+            this.Controls.Add(this.lblUT);
+            this.Controls.Add(this.lblAlisFiyat);
+            this.Controls.Add(this.lblAdet);
+            this.Controls.Add(this.lblBarkod);
+            this.Controls.Add(this.lblLot);
+            this.Controls.Add(this.lblUrunKodu);
+            this.Controls.Add(this.lblGenelNo);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtSKT);
             this.Controls.Add(this.txtUT);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtGenelNo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -184,7 +317,7 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             this.Controls.Add(this.txtAdet);
             this.Controls.Add(this.txtBarkod);
             this.Controls.Add(this.txtLot);
-            this.Controls.Add(this.txtUrunKodu);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "frmStokGuncelleme";
             this.Text = "frmStokGuncelleme";
             this.Load += new System.EventHandler(this.frmStokGuncelleme_Load);
@@ -194,8 +327,6 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtUrunKodu;
         private System.Windows.Forms.TextBox txtLot;
         private System.Windows.Forms.TextBox txtBarkod;
         private System.Windows.Forms.TextBox txtAdet;
@@ -205,10 +336,20 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtGenelNo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker txtUT;
         private System.Windows.Forms.DateTimePicker txtSKT;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblGenelNo;
+        private System.Windows.Forms.Label lblUrunKodu;
+        private System.Windows.Forms.Label lblLot;
+        private System.Windows.Forms.Label lblBarkod;
+        private System.Windows.Forms.Label lblAdet;
+        private System.Windows.Forms.Label lblAlisFiyat;
+        private System.Windows.Forms.Label lblUT;
+        private System.Windows.Forms.Label lblSKT;
+        private System.Windows.Forms.Button btnGuncelle;
+        private System.Windows.Forms.ComboBox txtUrunKodu;
     }
 }

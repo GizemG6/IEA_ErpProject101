@@ -370,9 +370,9 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
                 Liste2.Rows[i].Cells[8].Value = k.AlisFiyat;
                 i++;
             }
-            Liste.AllowUserToAddRows = true;
+            Liste.AllowUserToAddRows = false;
             Liste2.AllowUserToAddRows = false;
-            Liste.ReadOnly = false;
+            Liste.ReadOnly = true;
             Liste2.ReadOnly = true;
             Liste.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Topla();
@@ -489,6 +489,44 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
                 Home.Aktarma = secimId;
                 f.StokGuncelleme();
             }
+            Listele();
+           
+        }
+
+        private void guncelleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (secimId > 0)
+            {
+                secimId = (int)Liste.CurrentRow.Cells[0].Value;
+                Home.Aktarma = secimId;
+                f.StokGuncelleme();
+            }
+            Listele();
+        }
+
+        private void Listele()
+        {
+            ErpProjectWMPEntities db = new ErpProjectWMPEntities();
+            int i = 0;
+            var alt = db.tblStokGirisAlt.Where(x => x.GenelNo.ToString() == txtGenelNo.Text);
+
+            Liste.Rows.Clear();
+
+            foreach (var k in alt)
+            {
+                Liste.Rows.Add();
+                Liste.Rows[i].Cells[0].Value = k.Id;
+                Liste.Rows[i].Cells[1].Value = k.SiraNo;
+                Liste.Rows[i].Cells[2].Value = k.UrunKodu;
+                Liste.Rows[i].Cells[3].Value = k.LotSeriNo;
+                Liste.Rows[i].Cells[4].Value = k.Adet;
+                Liste.Rows[i].Cells[5].Value = k.Not;
+                Liste.Rows[i].Cells[6].Value = k.UT;
+                Liste.Rows[i].Cells[7].Value = k.SKT;
+                Liste.Rows[i].Cells[8].Value = k.AlisFiyat;
+                i++;
+            }
         }
     }
-}
+ }
+

@@ -28,8 +28,17 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
 
         private void frmStokGuncelleme_Load(object sender, EventArgs e)
         {
+            txtUrunKodu.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection veri = new AutoCompleteStringCollection();
+
+            var drinst = db.tblUrunler.Where(x => x.isActive == true).Select(item => item.UrunKodu).Distinct();
+            foreach (string urun in drinst)
+            {
+                veri.Add(urun);
+                txtUrunKodu.Items.Add(urun);
+            }
             var lst = db.tblStokGirisAlt.Find(Home.Aktarma);
-            txtGenelNo.Text = lst.GenelNo.ToString();
+            lblGenelNo.Text = lst.GenelNo.ToString();
             txtAdet.Text = lst.Adet.ToString();
             txtAlisFiyat.Text = lst.AlisFiyat.ToString();
             txtBarkod.Text = lst.Barkod;
@@ -37,91 +46,141 @@ namespace IEA_ErpProject101_Main.DepoIslemleri.StokIslemleri
             txtUrunKodu.Text = lst.UrunKodu;
             txtUT.Value = lst.UT.Value;
             txtSKT.Value = lst.SKT.Value;
+            lblAdet.Text = lst.Adet.ToString();
+            lblAlisFiyat.Text = lst.AlisFiyat.ToString();
+            lblBarkod.Text = lst.Barkod;
+            lblLot.Text = lst.LotSeriNo;
+            lblUrunKodu.Text = lst.UrunKodu;
+            lblUT.Text = lst.UT.ToString();
+            lblSKT.Text = lst.SKT.ToString();
         }
-        //private void FormAc(int id)
-        //{
-        //    int i = 0;
-        //    //var kayitBul=db.tblStokGirisUst.Find(id);
-        //    var kayitBul1 = db.vwStokGiris.First(x => x.Id == id);
-        //    //tblStokGiris Ust ust = kayitBul;
-        //    vwStokGiris ust = kayitBul1;
-        //    txtGenelNo.Text = ust.GenelNo.ToString();
-        //    txtCariGrup.Text = ust.GrupAdi;
-        //    txtAciklama.Text = ust.Aciklama;
-        //    txtFaturaNo.Text = ust.FaturaNo;
-        //    txtCariAdi.Text = ust.CariAdi;
-        //    if (ust.FaturaTarih != null) txtGirisTarih.Value = (DateTime)ust.FaturaTarih;
-        //    if (ust.GirisTipi != null) txtGirisTipi.SelectedIndex = ust.GirisTipi.Value;
 
-        //    //var alt = db.tblStokGirisAlt.Where(x => x.GenelNo.ToString() == txtGenelNo.Text);
-        //    var alt1 = db.vwStokGiris.Where(x => x.GenelNo.ToString() == txtGenelNo.Text);
+        private void Guncelle()
+        {
+            if (lblBarkod.Text==txtBarkod.Text)
+            {
+                var srg = db.tblStokDurum.First(s => s.Barkod == lblBarkod.Text);
+                if (srg != null)
+                {
+                    srg.StokAdet -= int.Parse(lblAdet.Text);
+                    srg.RafAdet -= int.Parse(lblAdet.Text);
+                    srg.StokAdet += int.Parse(txtAdet.Text);
+                    srg.RafAdet += int.Parse(txtAdet.Text);
+                }
+                var lst = db.tblStokGirisAlt.First(s => s.Id == secimId);
 
-        //    Liste.Rows.Clear();
-        //    foreach (var k in alt1)
-        //    {
-        //        Liste.Rows.Add();
-        //        Liste.Rows[i].Cells[0].Value = k.SiraNo;
-        //        Liste.Rows[i].Cells[1].Value = k.Barkod;
-        //        Liste.Rows[i].Cells[2].Value = k.UrunKodu;
-        //        Liste.Rows[i].Cells[3].Value = k.LotSeriNo;
-        //        Liste.Rows[i].Cells[4].Value = k.Adet;
-        //        Liste.Rows[i].Cells[5].Value = k.Not;
-        //        Liste.Rows[i].Cells[6].Value = k.UT;
-        //        Liste.Rows[i].Cells[7].Value = k.SKT;
-        //        Liste.Rows[i].Cells[8].Value = k.AlisFiyat;
-        //        i++;
-        //    }
-        //    Liste.AllowUserToAddRows = false;
-        //    Liste.ReadOnly = true;
-        //    Liste.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        //}
-        //    private void Listele()
-        //    {
-        //        Liste.Rows.Clear();
-        //        int i = 0, sira = 1;
-        //        var lst = (from s in db.tblStokGirisUst where s.isActive == true select s).ToList();
+                lst.UrunKodu = txtUrunKodu.Text;
+                lst.AlisFiyat = Convert.ToDecimal(txtAlisFiyat.Text);
+                lst.Barkod = txtBarkod.Text;
+                lst.LotSeriNo = txtLot.Text;
+                lst.SKT = txtSKT.Value;
+                lst.UT = txtUT.Value;
+                lst.Adet = Convert.ToInt32(txtAdet.Text);
 
-        //        var lst1 = (from s in db.vwStokGiris
-        //                    where s.isActive == true
-        //                    select s).ToList().Distinct();
+                db.SaveChanges();
+                MessageBox.Show("Guncelleme yapildi");
+                Close(); 
+            }else if (txtBarkod.Text != lblBarkod.Text)
+            {
+                var varmi = db.tblStokDurum.Where(s => s.Barkod == txtBarkod.Text).ToList();
+                
+                if (varmi.Count>0)
+                {
+                    var srg = db.tblStokDurum.First(s => s.Barkod == lblBarkod.Text);
+                    if (srg != null)
+                    {
+                        srg.StokAdet -= int.Parse(lblAdet.Text);
+                        srg.RafAdet -= int.Parse(lblAdet.Text);
+                    }
+                    var lst = db.tblStokGirisAlt.First(s => s.Id == secimId);
 
-        //        foreach (var k in lst1)
-        //        {
-        //            Liste.Rows.Add();
-        //            Liste.Rows[i].Cells[0].Value = k.Id;
-        //            Liste.Rows[i].Cells[1].Value = k.GenelNo;
-        //            Liste.Rows[i].Cells[2].Value = k.CariAdi;//k.tblCariler.CariAdi;
-        //            Liste.Rows[i].Cells[3].Value = k.FaturaNo;
-        //            Liste.Rows[i].Cells[4].Value = k.FaturaTarih;
-        //            Liste.Rows[i].Cells[5].Value = k.GirisTipi;
-        //            i++;
-        //            sira++;
-        //        }
-        //        Liste.AllowUserToAddRows = false;
-        //        Liste.ReadOnly = true;
-        //        Liste.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        //    }
-        //    private void Liste_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        //    {
-        //        try
-        //        {
-        //            TextBox txt = e.Control as TextBox;
-        //            if (Liste.CurrentCell.ColumnIndex == 2 && txt != null)
-        //            {
-        //                txt.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        //                txt.AutoCompleteSource = AutoCompleteSource.CustomSource;
-        //                txt.AutoCompleteCustomSource.AddRange(MyArray);
-        //            }
-        //            else if (Liste.CurrentCell.ColumnIndex != 2 && txt != null)
-        //            {
-        //                txt.AutoCompleteMode = AutoCompleteMode.None;
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.Message);
-        //        }
-        //    }
-        //}
+                    lst.UrunKodu = txtUrunKodu.Text;
+                    lst.AlisFiyat = Convert.ToDecimal(txtAlisFiyat.Text);
+                    lst.Barkod = txtBarkod.Text;
+                    lst.LotSeriNo = txtLot.Text;
+                    lst.SKT = txtSKT.Value;
+                    lst.UT = txtUT.Value;
+                    lst.Adet = Convert.ToInt32(txtAdet.Text);
+
+                    var srg1 = db.tblStokDurum.First(s => s.Barkod == txtBarkod.Text);
+                    if (srg1 != null)
+                    {
+                        srg1.StokAdet += int.Parse(txtAdet.Text);
+                        srg1.RafAdet += int.Parse(txtAdet.Text);
+                    }
+                    db.SaveChanges();
+                }
+                else
+                {
+                    var srg = db.tblStokDurum.First(s => s.Barkod == lblBarkod.Text);
+                    if (srg != null)
+                    {
+                        srg.StokAdet -= int.Parse(lblAdet.Text);
+                        srg.RafAdet -= int.Parse(lblAdet.Text);
+                    }
+                    tblStokDurum stk = new tblStokDurum();
+                    stk.Barkod = txtBarkod.Text;
+                    stk.RafAdet = int.Parse(txtAdet.Text);
+                    stk.StokAdet = int.Parse(txtAdet.Text);
+                    stk.KonsinyeAdet = 0;
+                    stk.Lot = txtLot.Text;
+                    stk.SKT = txtSKT.Value;
+                    stk.StokKodu = "1";
+                    stk.SubeAdet = 0;
+                    stk.UT = txtUT.Value;
+                    stk.Urun = txtUrunKodu.Text;
+
+                    db.tblStokDurum.Add(stk);
+
+                    var lst = db.tblStokGirisAlt.First(s => s.Id == secimId);
+
+                    lst.UrunKodu = txtUrunKodu.Text;
+                    lst.AlisFiyat = Convert.ToDecimal(txtAlisFiyat.Text);
+                    lst.Barkod = txtBarkod.Text;
+                    lst.LotSeriNo = txtLot.Text;
+                    lst.SKT = txtSKT.Value;
+                    lst.UT = txtUT.Value;
+                    lst.Adet = Convert.ToInt32(txtAdet.Text);
+
+                    db.SaveChanges();
+                }
+                MessageBox.Show("Guncelleme yapildi");
+                Close();
+            }
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            secimId = Home.Aktarma;
+            Guncelle();
+        }
+
+        private void txtUrunKodu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtBarkod.Text = txtUrunKodu.Text + "/" + txtLot.Text;
+            txtAdet.ReadOnly = true;
+            txtBarkod.ReadOnly = true;
+            TarihHesapla();
+        }
+        private void txtLot_TextChanged(object sender, EventArgs e)
+        {
+            txtBarkod.Text = txtUrunKodu.Text + "/" + txtLot.Text;
+            txtAdet.ReadOnly = true;
+            txtBarkod.ReadOnly = true;
+        }
+
+        private void txtUT_ValueChanged(object sender, EventArgs e)
+        {
+            TarihHesapla();
+        }
+        private void TarihHesapla()
+        {
+            var lst = (from s in db.tblUrunler
+                       where s.UrunKodu == txtUrunKodu.Text
+                       select s).FirstOrDefault();
+            int ayy = lst.KullanimSuresiAy.Value;
+            txtSKT.Value = txtUT.Value.AddMonths(ayy);
+            txtSKT.Enabled = false;
+        }
     }
 }
